@@ -1,5 +1,17 @@
 @import "default";
 
+.title-margin-sm {
+  margin-bottom: rem(40);
+}
+
+.title-margin-lg {
+  margin-bottom: rem(100);
+}
+
+.color-purple {
+  color: $purple;
+}
+
 .keepcenter {
   max-width: 1312px;
   margin: 0 auto;
