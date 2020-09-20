@@ -1,0 +1,36 @@
+@import "default";
+
+.keepcenter {
+  max-width: 1312px;
+  margin: 0 auto;
+}
+
+.button {
+  font-family: 'Montserrat', sans-serif;;
+  font-weight: bold;
+  border: none;
+  padding: rem(16);
+  font-size: rem(24);
+  align-self: flex-start;
+  color: #ffffff;
+  border-radius: 8px;
+  background: red;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle;
+  text-decoration: none !important;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.4s;
+
+  &_block {
+      display: block;
+      width: 100%;
+  }
+
+  &:hover {
+      transform: scale(1.1);
+  }
+}
