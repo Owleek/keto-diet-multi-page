@@ -1,0 +1,211 @@
+@import "default";
+
+.title-margin-sm {
+  margin-bottom: rem(40);
+}
+
+.title-margin-lg {
+  margin-bottom: rem(100);
+}
+
+.color-purple {
+  color: $purple;
+}
+
+.keepcenter {
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+.outer {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.button {
+  font-family: 'Montserrat', sans-serif;;
+  font-weight: bold;
+  border: none;
+  padding: rem(24);
+  font-size: rem(22);
+  background: $purple;
+  color: #ffffff;
+  align-self: flex-start;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle;
+  text-decoration: none !important;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.4s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &_block {
+      display: block;
+      width: 100%;
+  }
+
+  &_elipse {
+    border-radius: 35px;
+  }
+
+  &_blue {
+    background: $blue;
+  }
+
+  &_semi-bold {
+    font-weight: 600;
+  }
+
+  &_width-limit {
+    min-width: 350px;
+  }
+
+  &_lightweight {
+    font-size: rem(16);
+  }
+
+  &_control {
+    padding: rem(20);
+    font-size: rem(16);
+    color: $black;
+    font-weight: 600;
+    background: $white;
+    border-radius: 30px;
+    box-shadow: -5px 0px 60px 2px rgba(173, 0, 255, 0.1);
+
+    &:hover {
+      transform: none;
+    }
+
+    &.active {
+      color: $white;
+      background: $purple;
+    }
+  }
+}
+
+.btn-row,
+.btn-cell {
+  font-family: 'Montserrat', sans-serif;;
+  font-weight: 400;
+  border: 1px solid $purple;
+  padding: rem(27) rem(27);
+  background: $white;
+  color: #000000;
+  align-self: flex-start;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle;
+  text-decoration: none !important;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-row {
+  font-size: rem(22);
+  width: 100%;
+
+  &.active {
+    color: $white;
+    background: $purple;
+  }
+}
+
+.btn-cell {
+  font-size: rem(20);
+  width: 255px;
+  
+  &:hover {
+    border: 1px solid transparent;
+    box-shadow: 4px 4px 25px 10px rgba(173, 0, 255, 0.1);
+  }
+
+  &::after {
+    content: '';
+    width: 18px;
+    height: 16px;
+    position: absolute;
+    right: 26px; top: 50%;
+    transform: translate(0%, -50%);
+    background-image: url('../img/svg/x.svg');
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  &.active {
+    color: $white;
+    background: $purple;
+    
+    &::after {
+      background-image: url('../img/svg/v.svg');
+    }
+  }
+
+  &_green {
+    border: 1px solid $green;
+
+    &:hover,
+    &.active {
+      box-shadow: 4px 4px 25px 10px rgba(0, 201, 148, 0.1);
+    }
+
+    &.active {
+      color: $black;
+      background: $green;
+    }
+  }
+}
+
+.marked-frame {
+  border: 1px solid $purple;
+  padding: 30px 25px;
+  position: relative;
+  
+  &::before {
+    content: '';
+    width: 36px;
+    height: 22px;
+    position: absolute;
+    left: 30px; top: 50%;
+    transform: translateY(-50%);
+    background-image: url('../img/svg/v-big.svg');
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+}
+
+.input-box {
+  padding: 15px 15px 15px 20px;
+  background: $green;
+  font-size: rem(22);
+  display: flex;
+  justify-content: space-between;
+
+  &__text {
+    color: $white;
+    font-weight: 700;
+    display: block;
+  }
+
+  &__input {
+    font-weight: 400;
+    width: 142px;
+    border: none;
+    padding: 10px 22px 6px;
+    color: #E4E1E1;
+  }
+  &__wide-input {
+    width: 335px;
+  }
+}

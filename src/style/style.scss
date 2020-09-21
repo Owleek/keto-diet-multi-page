@@ -1,183 +1,130 @@
-@import "default";
+@import "desctop";
+
+@media (max-width: 1199px) { 
+
+body {
+  min-width: 414px;
+  font-size: rem(12);
+}
+
+h1 {
+  font-size: rem(38);
+}
+
+h2 {
+  font-size: rem(32);
+}
+
+h3 {
+  font-size: rem(22);
+}
+
+h4, h5 {
+  font-size: rem(16);
+}
+
 
 .title-margin-sm {
-  margin-bottom: rem(40);
+  margin-bottom: rem(30);
 }
 
 .title-margin-lg {
-  margin-bottom: rem(100);
-}
-
-.color-purple {
-  color: $purple;
+  margin-bottom: rem(50);
 }
 
 .keepcenter {
-  max-width: 1110px;
-  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .outer {
-  max-width: 1920px;
-  margin: 0 auto;
 }
 
 .button {
-  font-family: 'Montserrat', sans-serif;;
-  font-weight: bold;
-  border: none;
-  padding: rem(24);
-  font-size: rem(22);
-  background: $purple;
-  color: #ffffff;
-  align-self: flex-start;
-  display: inline-block;
-  overflow: hidden;
-  position: relative;
-  vertical-align: middle;
-  text-decoration: none !important;
-  text-align: center;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: all 0.4s;
+  font-size: rem(16);
+  padding: rem(20);
 
   &:hover {
-    transform: scale(1.1);
-  }
-
-  &_block {
-      display: block;
-      width: 100%;
+    transform: none;
   }
 
   &_elipse {
-    border-radius: 35px;
-  }
-
-  &_blue {
-    background: $blue;
-  }
-
-  &_semi-bold {
-    font-weight: 600;
+    font-size: rem(20);
+    padding: rem(24);
   }
 
   &_width-limit {
-    min-width: 350px;
   }
 
   &_lightweight {
-    font-size: rem(16);
   }
 
   &_control {
-    padding: rem(20);
-    color: $black;
-    font-weight: 600;
-    background: $white;
-    border-radius: 30px;
 
     &:hover {
-      transform: none;
     }
 
     &.active {
-      color: $white;
-      background: $purple;
     }
   }
 }
 
-
 .btn-row,
 .btn-cell {
-  font-family: 'Montserrat', sans-serif;;
-  font-weight: 400;
-  border: 1px solid $purple;
-  padding: rem(27) rem(27);
-  background: $white;
-  color: #000000;
-  align-self: flex-start;
-  display: inline-block;
-  overflow: hidden;
-  position: relative;
-  vertical-align: middle;
-  text-decoration: none !important;
-  text-align: center;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: all 0.4s;
-}
-
-.btn-row {
-  font-size: rem(22);
-  width: 100%;
-
-  &.active {
-    color: $white;
-    background: $purple;
-  }
+  font-size: rem(14);
+  padding: rem(16) rem(15);
 }
 
 .btn-cell {
-  font-size: rem(20);
-  width: 255px;
+  width: 50%;
   
   &:hover {
-    border: 1px solid transparent;
-    box-shadow: 4px 4px 25px 10px rgba(173, 0, 255, 0.1);
   }
 
   &::after {
-    content: '';
-    display: none;
-    width: 18px;
-    height: 16px;
-    position: absolute;
-    right: 26px; top: 50%;
-    transform: translate(100%, -50%);
-    background-image: url('../img/svg/v.svg');
-    background-size: contain;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
+    right: 15px;
   }
 
   &.active {
-    color: $white;
-    background: $purple;
-    
     &::after {
-      display: block;
     }
   }
 
   &_green {
-    border: 1px solid $green;
-
-    &:hover,
-    &.active {
-      box-shadow: 4px 4px 25px 10px rgba(0, 201, 148, 0.1);
-    }
-
-    &.active {
-      color: $black;
-      background: $green;
-    }
   }
 }
 
-// RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE
-// RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE
-// RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE
-// RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE
-// RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE
-// RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE
-// RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE
-// RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE
-// RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE
-// RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE
-// RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE
-// RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE
-// RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE
-// RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE
-// RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE
+
+.marked-frame {
+  padding: 16px 18px;
+  
+  &::before {
+    content: '';
+    width: 20px;
+    height: 15px;
+    position: absolute;
+    left: 18px; 
+  }
+}
+
+
+.input-box {
+  padding: 8px 15px 8px 13px;
+  font-size: rem(18);
+
+  &__text {
+  }
+
+  &__input {
+    font-size: 22px;
+    width: 122px;
+    padding: 6px 20px 6px 50px;
+    color: #E4E1E1;
+  }
+  &__wide-input {
+    padding: 10px 22px 6px;
+    width: 262px;
+  }
+}
+
+}
