@@ -23,13 +23,24 @@ h4, h5 {
   font-size: rem(16);
 }
 
+.title-margin-xs {
+  margin-bottom: rem(30);
+}
 
 .title-margin-sm {
+  margin-bottom: rem(40);
+}
+
+.title-margin-md {
   margin-bottom: rem(30);
 }
 
 .title-margin-lg {
   margin-bottom: rem(50);
+}
+
+.title-margin-xl {
+  margin-bottom: rem(60);
 }
 
 .keepcenter {
@@ -53,7 +64,7 @@ h4, h5 {
     padding: rem(24);
   }
 
-  &_width-limit {
+  &_wide {
   }
 
   &_lightweight {
@@ -127,4 +138,20 @@ h4, h5 {
   }
 }
 
+
+
+//////////////Flow-styles
+//////////////Flow-styles
+//////////////Flow-styles
+//////////////Flow-styles
+//////////////Flow-styles
+
+.action-screen {
 }
+
+
+
+
+
+}
+
