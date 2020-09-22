@@ -9,6 +9,34 @@ $purple: #AD00FF;
 $green: #00C994;
 $grey: #B4B1B1;
 
+@mixin respond($device) {
+
+    @if $device == lg {
+        @media only screen and (max-width: 1199px) {
+            @content;
+        }
+    };
+
+    @if $device == md {
+        @media only screen and (max-width: 1023px) {
+            @content;
+        }
+    };
+
+    @if $device == sm {
+        @media only screen and (max-width: 767px) {
+            @content;
+        }
+    };
+
+    @if $device == xs {
+        @media only screen and (max-width: 567px) {
+            @content;
+        }
+    };
+}
+
+
 html, body {
     height: 100%;
 }

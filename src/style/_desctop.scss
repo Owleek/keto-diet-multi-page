@@ -34,6 +34,7 @@
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .button {
@@ -236,7 +237,7 @@
   font-weight: bold;
   width: 100%;
   position: fixed;
-  top: 0;
+  top: 0; left: 0;
 
   &__inner {
     display: flex;
@@ -271,22 +272,20 @@
   &__inner {
     padding-top: 120px;
     padding-bottom: 115px;
+    display: flex;
+    flex-direction: column;
   }
 
   &__title {
     max-width: 632px;
     text-transform: uppercase;
     letter-spacing: 3px;
+    // order: 1;
     // ??????????????????? min-width 
-  }
 
-  &__buttons-holder {
-    display: flex;
-    justify-content: center;
-  }
-
-  &__button {
-    margin-right: 30px;
+    @include respond(sm) {
+      margin-bottom: 100px;
+    }
   }
 
   &__figure-block {
@@ -295,6 +294,42 @@
     height: 30.83vw;
     max-height: 444px;
     margin-bottom: 40px;
+
+    @include respond(sm) {
+      order: 1;
+      height: 337px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__buttons-holder {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 100;
+
+    @include respond(sm) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+
+    &:first-child {
+      margin-right: 30px;
+
+      @include respond(sm) {
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
+    }
+
+    @include respond(sm) {
+      align-self: center;
+    }
   }
 
   &__figure-1 {
@@ -305,6 +340,11 @@
     bottom: 0; right: 50%;
     transform: translateX(50%);
     background-image: url('../img/figure1.1.png');
+
+    @include respond(sm) {
+      width: 690px;
+      height: 337px;
+    }
   }
 
   &__figure-2 {
@@ -316,5 +356,42 @@
     background-image: url('../img/figure1.2.png');
     top: 48%; left:0;
     transform: translateY(-50%);
+    background-position: 0% 50%;
+
+    @include respond(sm) {
+      width: 100%;
+      height: 430px;
+    }
+  }
+
+  &__figure-3 {
+    z-index: -1;
+    max-width: 499px;
+    max-height: 451px;
+    width: 34.65vw;
+    height: 31.32vw;
+    background-image: url('../img/figure1.3.png');
+    top: 0; right:0;
+    background-position: 100% 0%;
+    
+    @include respond(md) {
+      display: none;
+    }
+  }
+
+  &__figure-4 {
+    max-width: 230px;
+    max-height: 312px;
+    min-width: 110px;
+    width: 15.97vw;
+    height: 21.66vw;
+    background-image: url('../img/figure1.4.png');
+    bottom: 0; right:0;
+    background-position: 100% 100%;
+
+    @include respond(md) {
+      bottom: auto; top: 133px;
+      z-index: -1;
+    }
   }
 }
