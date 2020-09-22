@@ -255,6 +255,7 @@
 
   &__inner {
     position: relative;
+    z-index: 1;
   }
 
   &__figure {
@@ -276,7 +277,6 @@
     max-width: 632px;
     text-transform: uppercase;
     letter-spacing: 3px;
-    margin-bottom: 480px;
     // ??????????????????? min-width 
   }
 
@@ -289,13 +289,32 @@
     margin-right: 30px;
   }
 
+  &__figure-block {
+    width: 100%;
+    position: relative;
+    height: 30.83vw;
+    max-height: 444px;
+    margin-bottom: 40px;
+  }
+
   &__figure-1 {
+    max-width: 1140px;
+    max-height: 555px;
+    width: 79.16vw;
+    height: 38.54vw;
+    bottom: 0; right: 50%;
+    transform: translateX(50%);
+    background-image: url('../img/figure1.1.png');
+  }
+
+  &__figure-2 {
+    z-index: -1;
     max-width: 196px;
     max-height: 439px;
     width: 13.61vw;
     height: 30.48vw;
-    background-image: url('../img/figure1.1.png');
-    left: 0; top: 48%;
+    background-image: url('../img/figure1.2.png');
+    top: 48%; left:0;
     transform: translateY(-50%);
   }
 }
