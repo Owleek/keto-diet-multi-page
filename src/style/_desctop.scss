@@ -250,14 +250,30 @@
 }
 
 .action-screen {
+  // plan-row
+  // plan-col
+  // center
+  // tac
+  // indent-title
 }
 
 .scene {
 
   &__inner {
-    position: relative;
-    z-index: 1;
+    display: flex;
   }
+
+  &__side {
+    flex-basis: 22.97%;
+  }
+
+  &__main {
+    flex-basis: 77.03%;
+    padding-top: 130px;
+    box-shadow: -5px 0px 60px 2px rgba(173, 0, 255, 0.1);
+  }
+
+  &__title {}
 
   &__figure {
     position: absolute;
@@ -268,6 +284,7 @@
 }
 
 .scene-start {
+  display: none;
 
   &__inner {
     padding-top: 120px;
