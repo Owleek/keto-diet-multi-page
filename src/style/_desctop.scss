@@ -282,6 +282,7 @@
 }
 
 .scene {
+  position: relative;
 
   &__inner {
     display: flex;
@@ -291,6 +292,18 @@
     flex-basis: 22.97%;
     padding-top: 120px;
     padding-right: 65px;
+    position: relative;
+
+    &-figure_2 {
+      max-width: 410px;
+      max-height: 690px;
+      bottom: 0; right: 0;
+      width: 29.09vw;
+      height: 47.91vw;
+      background-image: url('../img/figure2.1.png');
+      background-position: 100% 100%;
+      z-index: -1;
+    }
   }
 
   &__main {
@@ -305,7 +318,7 @@
   &__title {}
 
   &__text-indent {
-    padding-left: 65px;
+    margin-left: 65px;
   }
 
   &__text-limit {
@@ -362,6 +375,31 @@
     font-weight: 500;
     font-style: italic;
     opacity: 1;
+  }
+}
+
+.stage-2 {
+  &__figure_1 {
+    z-index: -1;
+    max-width: 196px;
+    max-height: 439px;
+    width: 13.61vw;
+    height: 30.48vw;
+    background-image: url('../img/figure1.2.png');
+    top: 140px; right: 0;
+    transform: rotate(180deg);
+    background-position: 100% 50%;
+  }
+
+  &__figure_2 {
+    z-index: -1;
+    max-width: 252px;
+    max-height: 342px;
+    width: 17.5vw;
+    height: 23.75vw;
+    background-image: url('../img/figure1.4.png');
+    bottom: 0; right: 0;
+    background-position: 100% 100%;
   }
 }
 
