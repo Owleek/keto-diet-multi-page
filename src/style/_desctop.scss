@@ -208,10 +208,11 @@
 }
 
 .input-box {
-  padding: 15px 15px 15px 20px;
+  padding: 14px 15px 14px 20px;
   background: $green;
   font-size: rem(22);
   display: flex;
+  align-items: center;
   justify-content: space-between;
 
   &__text {
@@ -224,8 +225,9 @@
     font-weight: 400;
     width: 142px;
     border: none;
-    padding: 10px 22px 6px;
+    padding: 8px 22px;
     color: #E4E1E1;
+    text-align: center;
   }
   &__wide-input {
     width: 335px;
@@ -242,7 +244,7 @@
   font-size: rem(22);
   font-weight: bold;
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 0; left: 0;
 
   &__inner {
@@ -424,13 +426,20 @@
     margin-bottom: 90px;
   }
 
-  &__limit-center {
-    text-align: center;
+  &__limit {
     max-width: 680px;
     padding-bottom: 1px;
-    margin: 0 auto;
+  
+    &_center {
+      text-align: center;
+      margin: 0 auto;
+    }
+  
+    &_left {
+      text-align: left;
+      margin-left: 14.61%;
+    }
   }
-
   &__plan-column {
     padding-right: 22.22%;
     padding-left: 14.61%;
@@ -443,6 +452,11 @@
       display: flex;
       flex-wrap: wrap;
       margin-bottom: 15px;
+    }
+
+    &_indent_a {
+      margin-left: -30px;
+      // padding-left: 30px;
     }
   }
 
@@ -465,6 +479,12 @@
 
     &_center {
       justify-content: center;
+    }
+  }
+
+  &__input-box {
+    &:not(:last-child) {
+      margin-bottom: 20px;
     }
   }
 
@@ -546,6 +566,48 @@
       bottom: 0; right: 0;
       background-position: 100% 100%;
     }
+  
+    &_7 {
+      max-width: 420px;
+      max-height: 421px;
+      width: 29.16vw;
+      height: 29.23vw;
+      background-image: url('../img/figure5.2.png');
+      bottom: 0; right: 0;
+      background-position: 100% 100%;
+    }
+  
+    &_8 {
+      max-width: 192px;
+      max-height: 430px;
+      width: 13.33vw;
+      height: 29.86vw;
+      background-image: url('../img/figure6.2.png');
+      top: 50%; right: 0;
+      background-position: 100% 50%;
+      transform: translateY(-50%);
+    }
+  
+    &_9 {
+      max-width: 222px;
+      max-height: 301px;
+      width: 15.41vw;
+      height: 20.9vw;
+      background-image: url('../img/figure1.4.png');
+      bottom: 0; right: 0;
+      background-position: 100% 100%;
+    }
+  
+    &_10 {
+      max-width: 189px;
+      max-height: 319px;
+      width: 13.12vw;
+      height: 22.15vw;
+      background-image: url('../img/figure8.2.png');
+      bottom: 0; left: 0;
+      background-position: 0% 100%;
+      z-index: -1;
+    }
   }
 
   &__stage-arts {
@@ -599,6 +661,7 @@
     background-position: 50% 50%;
     background-size: contain;
     display: none;
+    z-index: -1;
 
     &.active {
       display: block;
@@ -612,7 +675,6 @@
       height: 47.91vw;
       background-image: url('../img/figure2.1.png');
       background-position: 100% 100%;
-      z-index: -1;
     }
   
     &_2 {
@@ -623,7 +685,6 @@
       height: 25.2vw;
       background-image: url('../img/figure3.1.png');
       background-position: 100% 100%;
-      z-index: -1;
     }
   
     &_3 {
@@ -634,7 +695,46 @@
       height: 29.79vw;
       background-image: url('../img/figure4.1.png');
       background-position: 100% 100%;
-      z-index: -1;
+    }
+  
+    &_4 {
+      max-width: 420px;
+      max-height: 380px;
+      bottom: 0; right: 0;
+      width: 29.16vw;
+      height: 26.38vw;
+      background-image: url('../img/figure5.1.png');
+      background-position: 100% 100%;
+    }
+  
+    &_5 {
+      max-width: 333px;
+      max-height: 527px;
+      bottom: 0; right: 87px;
+      width: 23.12vw;
+      height: 36.59vw;
+      background-image: url('../img/figure6.1.png');
+      background-position: 100% 100%;
+    }
+  
+    &_6 {
+      max-width: 355px;
+      max-height: 622px;
+      bottom: 0; right: 65px;
+      width: 24.65vw;
+      height: 43.19vw;
+      background-image: url('../img/figure7.1.png');
+      background-position: 100% 100%;
+    }
+  
+    &_7 {
+      max-width: 338px;
+      max-height: 719px;
+      bottom: 0; right: 82px;
+      width: 23.47vw;
+      height: 49.93vw;
+      background-image: url('../img/figure8.1.png');
+      background-position: 100% 100%;
     }
   }
 }
