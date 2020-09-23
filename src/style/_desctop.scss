@@ -157,7 +157,6 @@
     }
 
     &.active {
-      color: $black;
       background: $green;
     }
   }
@@ -475,6 +474,10 @@
     &_right {
       padding-left: 14.61%;
     }
+
+    &_center {
+      padding: 0 14.61%;
+    }
   }
   
   &__figure {
@@ -520,6 +523,26 @@
       width: 26.18vw;
       height: 112.5vw;
       background-image: url('../img/figure3.3.png');
+      bottom: 0; right: 0;
+      background-position: 100% 100%;
+    }
+  
+    &_5 {
+      max-width: 357px;
+      max-height: 85px;
+      width: 24.79vw;
+      height: 5.9vw;
+      background-image: url('../img/figure4.2.png');
+      top: 0; left: 0;
+      background-position: 0% 0%;
+    }
+  
+    &_6 {
+      max-width: 220px;
+      max-height: 175px;
+      width: 15.27vw;
+      height: 12.15vw;
+      background-image: url('../img/figure4.3.png');
       bottom: 0; right: 0;
       background-position: 100% 100%;
     }
@@ -599,6 +622,17 @@
       width: 29.3vw;
       height: 25.2vw;
       background-image: url('../img/figure3.1.png');
+      background-position: 100% 100%;
+      z-index: -1;
+    }
+  
+    &_3 {
+      max-width: 420px;
+      max-height: 429px;
+      bottom: 0; right: 0;
+      width: 29.16vw;
+      height: 29.79vw;
+      background-image: url('../img/figure4.1.png');
       background-position: 100% 100%;
       z-index: -1;
     }
