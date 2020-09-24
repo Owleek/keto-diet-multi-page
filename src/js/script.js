@@ -1,2 +1,29 @@
-
-
+$(document).ready(function(){
+  $('#carousel').owlCarousel({
+    loop: false,
+    margin: 0,
+    autoHeight:true,
+    responsiveClass:true,
+    responsive:{
+      0:{
+          items:1, 
+          nav:false,
+          dots:true
+      },
+      1199:{
+          items:1,
+          nav:false,
+          dots:true,
+          slideBy:1,
+          loop:false
+      },
+      1200:{
+        items:2,
+        nav:false,
+        dots:true,
+        slideBy:1,
+        loop:false
+      }
+    }
+  })
+});

@@ -957,6 +957,8 @@
 }
 
 .resume {
+  padding-bottom: 40px;
+
   &__title {
     margin-bottom: 130px;
     position: relative;
@@ -1106,3 +1108,85 @@
 .resume-card__more:hover ~ .resume-card__info {
   display: block;
 }
+
+.reviews {
+  &__title {
+    padding: 0 17.11%;
+    margin-bottom: 45px;
+    text-align: center;
+  }
+  &__box {
+    padding: 0px 5.2% 50px;
+  }
+}
+
+.review {
+  display: flex;
+  max-width: 445px;
+  min-height: 258px;
+  padding: 30px 20px;
+  box-shadow: 0px 0px 25px 3px rgba(173, 0, 255, 0.1);
+
+  &__left {
+    margin-right: 14px;
+    flex-shrink: 0;
+  }
+
+  &__right {
+    font-size: 14px;
+  }
+
+  &__img {
+    max-width: 100px;
+    max-height: 100px;
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 20px;
+
+    img {
+      display: inline-block;
+      object-fit: contain;
+    }
+  }
+
+  &__caption {
+    font-size: 20px;
+  }
+}
+
+
+.owl-theme .owl-nav.disabled + .owl-dots {
+  margin-top: 0px;
+}
+
+.owl-carousel .owl-stage-outer {
+  padding: 30px 0px 30px 0px;
+}
+
+.owl-carousel .owl-item {
+  padding-left: 30px;
+}
+
+.owl-carousel .owl-nav button.owl-next > span, 
+.owl-carousel .owl-nav button.owl-prev > span { 
+  display: none;
+}
+
+.owl-theme .owl-dots .owl-dot {
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.owl-theme .owl-dots .owl-dot span {
+  background: $purple;
+  opacity: 0.3;
+}
+
+.owl-theme .owl-dots .owl-dot.active span, 
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: $purple;
+  opacity: 1;
+}
+
+
