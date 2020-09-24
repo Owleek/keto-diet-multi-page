@@ -951,3 +951,158 @@
     }
   }
 }
+
+.resume-content {
+  padding-top: 140px;
+}
+
+.resume {
+  &__title {
+    margin-bottom: 130px;
+    position: relative;
+    padding: 0 17.11%;
+    text-align: center;
+
+    &:after {
+      content: '';
+      width: 100%;
+      height: 136px;
+      position: absolute;
+      left: 0; top: 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url('../img/figure10.png');
+    }
+  }
+
+  &__button-holder {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  &__list-container {
+    margin-bottom: 20px;
+  }
+
+  &__list-headline {
+    font-size: rem(22);
+    font-weight: 600;
+    margin-bottom: 50px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__card {
+    width: 22.27%;
+    margin-bottom: 30px;
+  }
+}
+
+.resume-card {
+  padding: 20px 18px;
+  display: flex;
+  min-height: 210px;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+  box-shadow: 0px 0px 25px 3px rgba(173, 0, 255, 0.1);
+  user-select: none;
+  position: relative;
+
+  &__header {
+  }
+
+  &__bottom {
+    margin-top: auto;
+  }
+
+  &__text {
+    display: inline-block;
+    font-size: rem(16);
+    font-weight: 600;
+  }
+
+  &__more {
+    width: 24px;
+    height: 24px;
+    background: $purple;
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 16px;
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    top: 14px; right: 14px;
+    color: $white;
+    line-height: 1;
+    flex-shrink: 0;
+
+    &::before {
+      content: '?';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+    }
+  }
+
+  &__info {
+    border: 1px solid $purple;
+    padding: 24px 18px;
+    font-size: 14px;
+    position: absolute;
+    left: 0; top: 40px;
+    width: 100%;
+    height: auto;
+    background-color: $white;
+    z-index: 100;
+    display: none;
+
+    &-title {
+      font-size: 14px;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+  }
+
+  &_1 {
+    background-image: url('../img/card1.1.png');
+  }
+
+  &_2 {
+    background-image: url('../img/card2.1.png');
+  }
+
+  &_3 {
+    background-image: url('../img/card3.png');
+  }
+
+  &_4 {
+    background-image: url('../img/card4.png');
+  }
+
+  &_5 {
+    background-image: url('../img/card5.png');
+  }
+
+  &_6 {
+    background-image: url('../img/card6.png');
+  }
+
+  &_7 {
+    background-image: url('../img/card7.png');
+  }
+
+  &_8 {
+    background-image: url('../img/card8.png');
+  }
+}
+
+.resume-card__more:hover ~ .resume-card__info {
+  display: block;
+}
