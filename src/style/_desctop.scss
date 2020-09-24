@@ -232,21 +232,45 @@
     width: 142px;
     border: none;
     padding: 8px 22px;
-    color: #E4E1E1;
+    color: $black;
     text-align: center;
-  }
-  &__wide-input {
-    width: 335px;
+
+    &::placeholder {
+      color: #E4E1E1;
+    }
+    
+    &_wide {
+      width: 335px;
+    }
+
+    &_text-left {
+      text-align: left;
+    }
   }
 }
-
 
 .plan-column {
   padding-right: 17.11%;
   padding-left: 17.11%;
 }
 
+.acept {
+  user-select: none;
+  position: relative;
+  // padding-left: 20px;
 
+  &__checkbox {
+    margin-right: 20px;
+    // display: none;
+  }
+
+ &::before {
+  content: '';
+  position: absolute;
+  width: 26px;
+  height: 26px;
+ }
+}
 
 
 .owl-theme .owl-nav.disabled + .owl-dots {
@@ -1023,7 +1047,12 @@
 }
 
 .resume-content {
+  display: none;
   padding-top: 140px;
+
+  &.active {
+    display: block;
+  }
 }
 
 .resume {
@@ -1263,4 +1292,71 @@
   }
 }
 
+.contact-details {
+  display: none;
 
+  &.active {
+    display: block;
+  }
+
+  &__inner {
+    position: relative;
+    padding-top: 140px;
+    padding-bottom: 230px;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 70px;
+  }
+
+  &__subtitle {
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 70px;
+  }
+
+  &__form {
+    padding: 0px 13%;
+  }
+
+  &__input-box {
+    margin-bottom: 20px;
+  }
+
+  &__acept {
+    display: block;
+    margin-bottom: 50px;
+  }
+
+  &__button-holder {
+    text-align: center;
+  }
+  
+  &__figure {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
+
+    &_1 {
+      max-width: 350px;
+      max-height: 565px;
+      width: 24.3vw;
+      height: 39.23vw;
+      right: -15px;
+      bottom: 0;
+      background-image: url('../img/figure12.1.png');
+    }
+
+    &_2 {
+      max-width: 341px;
+      max-height: 260px;
+      width: 23.68vw;
+      height: 18.05vw;
+      left: -165px;
+      bottom: 0;
+      background-image: url('../img/figure12.2.png');
+    }
+  }
+}
