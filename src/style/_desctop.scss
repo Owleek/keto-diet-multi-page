@@ -1361,6 +1361,150 @@
   }
 }
 
+
+.offer {
+  &__inner {
+    padding-top: 120px;
+    padding-bottom: 35px;
+    position: relative;
+  }
+
+  &__teaser {
+    margin-bottom: 80px;
+    position: relative;
+  }
+
+  &__sound-toggler {
+    font-size: 14px;
+    text-align: center;
+    width: 255px;
+    height: 30px;
+    position: absolute;
+    left: 0; top: 36px;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: 0; top: 50%;
+      width: 100%;
+      height: auto;
+      transform: translateY(-50%);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: 50% 50%;
+      background-image: url('../img/figure14.3.png');
+    }
+  }
+}
+
+.teaser {
+  &__column {
+    max-width: 540px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
+  &__video-box {
+    width: 100%;
+    height: 433px;
+    background: $grey;
+    margin-bottom: 25px;
+  }
+
+  &__caption {
+    padding: 0 8.55%;
+    text-align: center;
+  }
+}
+
+.order-block {
+  display: flex;
+  justify-content: space-between;
+
+  &__left {
+    margin-right: 40px;
+  }
+
+  &__right {
+    width: 48.64%;
+  }
+
+  &__timer-box {
+    margin-bottom: 30px;
+  }
+
+  &__rating {
+    padding: 42px 20px 20px;
+    width: 350px;
+    text-align: center;
+    font-size: 22px;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 260px;
+      height: 30px;
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: 50% 50%;
+      background-image: url('../img/rating.png');
+    }
+  }
+}
+
+.timer-box {
+  width: 350px;
+  text-align: center;
+  padding: 0 20px;
+  font-size: 80px;
+  font-weight: 600;
+  color: $white;
+  background-color: $green;
+}
+
+.order {
+  margin-left: auto;
+
+  &__price {
+    margin-bottom: 20px;
+  }
+}
+
+.price {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  line-height: 1;
+
+  &__tag {
+    font-size: 38px;
+    font-weight: bold;
+    margin-right: 30px;
+  }
+
+  &__holder {
+    white-space: nowrap;
+  }
+
+  &__current {
+    font-size: 80px;
+    font-weight: bold;
+    margin-right: 20px;
+  }
+
+  &__previous {
+    font-size: 22px;
+    color: $grey;
+    text-decoration: line-through;
+  }
+}
+
+
 .fail {
   position: relative;
   display: none;
