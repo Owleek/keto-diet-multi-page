@@ -57,11 +57,17 @@
     font-weight: 600;
   }
 
+  &_semi-wide {
+    min-width: 305px;
+  }
+
   &_wide {
     min-width: 350px;
   }
 
   &_lightweight {
+    padding: rem(20);
+    font-weight: 600;
     font-size: rem(16);
   }
 
@@ -400,6 +406,11 @@
 
 .scene {
   position: relative;
+  display: none;
+
+  &.active {
+    display: block;
+  }
 
   &__inner {
     display: flex;
@@ -840,3 +851,103 @@
   }
 }
 
+.creation {
+  display: none;
+  background-image: url('../img/bg-1.png');
+  background-size: cover;
+  background-color: $white;
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+
+  &.active {
+    display: block;
+  }
+
+  &__inner {
+    padding: 140px 22.52% 100px;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 70px;
+  }
+
+  &__text {
+    display: none;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 60px;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__subject {
+    font-size: 38px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  &__button-holder {
+    text-align: center;
+  }
+}
+
+.fill-box {
+  width: 350px;
+  height: 385px;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  background-color: $grey;
+  overflow: hidden;
+  user-select: none;
+
+  &__progress {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 50px;
+    font-weight: bold;
+    color: $white;
+    position: relative;
+    z-index: 3;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-size: cover;
+    transition: 5s all linear;
+  }
+
+  &:before {
+    background-image: url('../img/figure9.1.png');
+    z-index: 2;
+  }
+
+  &:after {
+    bottom: 0;
+    z-index: 1;
+    background: rgb(0,255,164);
+    background: linear-gradient(150deg, rgba(0,255,164,1) 0%, rgba(0,99,57,1) 100%);
+    transform: translateY(101%);
+  }
+
+  &:hover {
+    &:after {
+      background: rgb(0,255,164);
+      background: linear-gradient(168deg, rgba(0,255,164,1) 0%, rgba(0,99,57,1) 100%);
+      transform: translateY(0%);
+    }
+  }
+}
