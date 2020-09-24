@@ -1360,3 +1360,54 @@
     }
   }
 }
+
+.fail {
+  position: relative;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  &__inner {
+    min-height: 100vh;
+    padding-top: 37.1vh;
+    padding-bottom: 15vh;
+    text-align: center;
+    position: relative;
+  }
+  &__title {
+    margin-bottom: 20px;
+  }
+  &__text {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  &__figure {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
+
+    &_1 {
+      max-width: 472px;
+      max-height: 462px;
+      width: 32.77vw;
+      height: 32.08vw;
+      right: -122px;
+      bottom: 47px;
+      background-image: url('../img/figure14.1.png');
+    }
+
+    &_2 {
+      max-width: 405px;
+      max-height: 451px;
+      width: 28.12vw;
+      height: 31.31vw;
+      left: -165px;
+      bottom: 0;
+      background-image: url('../img/figure14.2.png');
+    }
+  }
+}
