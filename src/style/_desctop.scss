@@ -240,6 +240,76 @@
   }
 }
 
+
+.plan-column {
+  padding-right: 17.11%;
+  padding-left: 17.11%;
+}
+
+
+
+
+.owl-theme .owl-nav.disabled + .owl-dots {
+  margin-top: 0px;
+}
+
+.owl-carousel .owl-stage-outer {
+  padding: 30px 0px 30px 0px;
+}
+
+.owl-carousel .owl-item {
+  padding-left: 30px;
+}
+
+.owl-carousel .owl-nav button.owl-next > span, 
+.owl-carousel .owl-nav button.owl-prev > span { 
+  display: none;
+}
+
+.owl-theme .owl-dots .owl-dot {
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.owl-theme .owl-dots .owl-dot span {
+  background: $purple;
+  opacity: 0.3;
+}
+
+.owl-theme .owl-dots .owl-dot.active span, 
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: $purple;
+  opacity: 1;
+}
+// flow-styles
+// flow-styles
+// flow-styles
+// flow-styles
+// flow-styles
+// flow-styles
+// flow-styles
+// flow-styles
+// flow-styles
+// flow-styles
+// flow-styles
+// flow-styles
+// flow-styles
+// flow-styles
+// flow-styles
+// flow-styles
+// flow-styles
+// flow-styles
+// flow-styles
+// flow-styles
+// flow-styles
+// flow-styles
+// flow-styles
+// flow-styles
+// flow-styles
+// flow-styles
+// flow-styles
+// flow-styles
 // flow-styles
 // flow-styles
 // flow-styles
@@ -1154,39 +1224,43 @@
   }
 }
 
+.kit {
+  text-align: center;
+  position: relative;
+  padding-bottom: 70px;
 
-.owl-theme .owl-nav.disabled + .owl-dots {
-  margin-top: 0px;
-}
-
-.owl-carousel .owl-stage-outer {
-  padding: 30px 0px 30px 0px;
-}
-
-.owl-carousel .owl-item {
-  padding-left: 30px;
-}
-
-.owl-carousel .owl-nav button.owl-next > span, 
-.owl-carousel .owl-nav button.owl-prev > span { 
-  display: none;
-}
-
-.owl-theme .owl-dots .owl-dot {
-  &:not(:last-child) {
-    margin-right: 10px;
+  &__title {
+    margin-bottom: 50px;
   }
-}
 
-.owl-theme .owl-dots .owl-dot span {
-  background: $purple;
-  opacity: 0.3;
-}
+  &__list {
+    padding-bottom: 20px;
+  }
 
-.owl-theme .owl-dots .owl-dot.active span, 
-.owl-theme .owl-dots .owl-dot:hover span {
-  background: $purple;
-  opacity: 1;
+  &__item {
+    background-color: $white;
+    display: inline-flex;
+    align-items: center;
+    min-height: 100px;
+    padding: 17px 96px;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  
+  &__figure {
+    position: absolute;
+    bottom: 0; right: -165px;
+    z-index: -1;
+    max-width: 705px;
+    max-height: 792px;
+    width: 48.95vw;
+    height: 55vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 100%;
+    background-image: url('../img/figure11.png');
+  }
 }
 
 
