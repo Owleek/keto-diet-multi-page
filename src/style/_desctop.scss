@@ -14,6 +14,9 @@
   max-width: 1920px;
   margin: 0 auto;
   overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .button {
@@ -1363,6 +1366,12 @@
 
 
 .offer {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
   &__inner {
     padding-top: 120px;
     padding-bottom: 35px;
@@ -1380,6 +1389,7 @@
     width: 255px;
     height: 30px;
     position: absolute;
+    z-index: 50;
     left: 0; top: 36px;
     user-select: none;
     cursor: pointer;
@@ -1618,4 +1628,61 @@
       background-image: url('../img/figure14.2.png');
     }
   }
+}
+
+.footer {
+  background: $purple;
+  color: $white;
+  font-size: 12px;
+
+  &__inner {
+     padding-top: 30px;
+     padding-bottom: 20px;
+     display: flex;
+     justify-content: space-between;
+  }
+
+  &__left,
+  &__right {
+    flex-basis: 23%;
+  }
+
+  &__center {
+    flex-basis: 31.5%;
+  }
+
+  &__left,
+  &__center {
+    padding-right: 25px;
+  }
+
+  &__left,
+  &__center,
+  &__right {
+    padding-bottom: 1px;
+  }
+
+  &__logo {
+    font-size: 22px;
+    white-space: nowrap;
+    margin-bottom: 30px;
+  }
+
+  &__data-list {}
+
+  &__data-item {
+    margin-bottom: 1px;
+  }
+
+  &__headline {
+    display: block;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+
+    &_bold {
+      font-weight: bold;
+    }
+  }
+
 }
