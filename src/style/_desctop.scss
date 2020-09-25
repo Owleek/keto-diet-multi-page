@@ -1381,6 +1381,7 @@
     height: 30px;
     position: absolute;
     left: 0; top: 36px;
+    user-select: none;
     cursor: pointer;
 
     &::before {
@@ -1389,7 +1390,7 @@
       z-index: -1;
       left: 0; top: 50%;
       width: 100%;
-      height: auto;
+      height: 92px;
       transform: translateY(-50%);
       background-repeat: no-repeat;
       background-size: contain;
@@ -1455,6 +1456,18 @@
       background-image: url('../img/rating.png');
     }
   }
+
+  &__button {
+    margin-bottom: 35px;
+  }
+
+  &__payments {
+    margin-bottom: 40px;
+  }
+
+  &__achievments {
+    margin-bottom: 50px;
+  }
 }
 
 .timer-box {
@@ -1469,10 +1482,6 @@
 
 .order {
   margin-left: auto;
-
-  &__price {
-    margin-bottom: 20px;
-  }
 }
 
 .price {
@@ -1480,21 +1489,28 @@
   align-items: flex-end;
   flex-wrap: wrap;
   line-height: 1;
+  padding-bottom: 1px;
 
   &__tag {
     font-size: 38px;
     font-weight: bold;
-    margin-right: 30px;
+    margin-bottom: 20px;
   }
 
   &__holder {
-    white-space: nowrap;
+    margin: 0 auto;
+    flex-basis: 64%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 20px;
   }
 
   &__current {
+    line-height: 0.8;
     font-size: 80px;
     font-weight: bold;
-    margin-right: 20px;
+    margin-right: 25px;
   }
 
   &__previous {
@@ -1504,6 +1520,54 @@
   }
 }
 
+.payments {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 25px;
+    }
+  }
+}
+
+.achievments {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -1px;
+
+  &__item {
+    position: relative;
+    padding-left: 50px;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    &::before {
+      content: '';
+      width: 28px;
+      height: 20px;
+      position: absolute;
+      left: 0; top: 2px;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: contain;
+      background-image: url('../img/svg/v-big.svg');
+    }
+  }
+}
+
+.secure {
+  font-size: 16px;
+  color: $grey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
 
 .fail {
   position: relative;
