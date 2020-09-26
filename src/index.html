@@ -55,7 +55,8 @@
         <div class="start-screen__figure start-screen__figure_2"></div>
         <div class="start-screen__figure start-screen__figure_3"></div>
         <div class="start-screen__figure start-screen__figure_4"></div>
-      </div><!--/start-screen-->
+      </div>
+      <!--/start-screen-->
       <div class="scene">
         <div class="keepcenter">
           <div class="scene__inner">
@@ -476,6 +477,39 @@
             </h2>
             <div class="fill-box">
               <div class="fill-box__progress">15%</div>
+              <svg width="350" height="385">
+                <pattern id="water" width="1" height="1" patternContentUnits="objectBoundingBox">
+                  <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#00ffa4" stop-opacity="1"/>
+                      <stop offset="100%" stop-color="#00653a" stop-opacity="1"/>
+                    </linearGradient>
+                  </defs>
+                  <rect width="350" height="1" fill="url(#grad1)"/>
+                </pattern>
+                <g>
+                  <svg id="text" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 383.53 421.18">
+                    <defs>
+                      <style>.cls-1 {fill: #d8d8d8;}</style>
+                    </defs>
+                    <g id="Layer_2" data-name="Layer 2">
+                      <g id="Layer_1-2" data-name="Layer 1">
+                        <path class="cls-1" d="M317.72,112.66c-2.07-.43-4.11-.38-6.17-.64a46.38,46.38,0,0,0-33.06-64.87A46.26,46.26,0,0,0,246,52.54,81.57,81.57,0,0,0,90.36,64.19,46.58,46.58,0,0,0,65.05,89.3a46.63,46.63,0,0,0-41.84,83.07,28.36,28.36,0,0,0,45.93,33.22c15-.11,33.77,4.19,49.54,21.49,15.55,54.14-26.14,177.39-26.14,177.39l104.29,16.11s-18.47-94.76-5.05-148.28c17.25-16,41.27-17.22,59.38-15.11a80.27,80.27,0,0,0,33.63,15.63,81.76,81.76,0,1,0,32.93-160.16ZM90.15,150.4a47.38,47.38,0,0,0,8.49,2.65,46.34,46.34,0,0,0,26.72-2.42c1.88,1.22,3.94,2.19,5.92,3.26-.72,10.77-2.25,22.26-5.55,30.06-5.57,13.16-30.06-7.3-44-20.52A46.19,46.19,0,0,0,90.15,150.4Zm9.17,54.82a77.68,77.68,0,0,0-26.4-6.07,28.26,28.26,0,0,0,1.53-17.05c8.3,6.69,18.87,15,32.27,25.31a29.58,29.58,0,0,1,7.56,8.94C108.72,211.18,103.34,206.89,99.32,205.22ZM197.08,257c7.69-16.72,19.12-25.38,30.36-29.75a83.37,83.37,0,0,0,12.23,18.92C221.27,245.34,207.37,250.28,197.08,257Zm24.09-80.73a81.3,81.3,0,0,0-1.45,18.88c-28.68,15-32.69-11.43-31.65-33.33A81.79,81.79,0,0,0,238,127.37a46.8,46.8,0,0,0,7.71,5.61A81.15,81.15,0,0,0,221.17,176.27Z"/>
+                      </g>
+                    </g>
+                  </svg>
+                </g>
+                <mask id="text-mask">
+                  <use x="0" y="0" xlink:href="#text" opacity="1" fill="#ddd" />
+                </mask>
+                <g id="eff">
+                  <use x="0" y="0" xlink:href="#text" fill="#69a8c9" /><!-- цвет fill объекта(текста) -->
+                  <rect class="water-fill" mask="url(#text-mask)" fill="url(#water)" y="0" width="500" height="400" opacity="0.9">
+                    <animate attributeType="xml" attributeName="y" from="500" to="0" repeatCount="1" dur="3s" />
+                  </rect>
+                </g>
+                <use xlink:href="#eff" opacity="0.9" />
+              </svg>
             </div>
             <div class="creation__text-holder">
               <p class="creation__text active">
@@ -501,7 +535,8 @@
             </div>
           </div>
         </div>
-      </div><!--/creation-->
+      </div>
+      <!--/creation-->
       <div class="resume-content">
         <div class="keepcenter">
           <div class="resume">
@@ -864,7 +899,8 @@
             <div class="kit__figure"></div>
           </div>
         </div>
-      </div><!--/resume-content-->
+      </div>
+      <!--/resume-content-->
       <div class="contact-details">
         <div class="keepcenter">
           <div class="contact-details__inner plan-column">
@@ -876,15 +912,18 @@
             </h4>
             <form action="" class="contact-details__form">
               <div class="input-box contact-details__input-box">
-                  <span class="input-box__text">Имя</span>
-                  <input type="text" class="input-box__input input-box__input_text-left input-box__input_wide" placeholder="Валерия">
+                <span class="input-box__text">Имя</span>
+                <input type="text" class="input-box__input input-box__input_text-left input-box__input_wide"
+                  placeholder="Валерия">
               </div>
               <div class="input-box contact-details__input-box">
-                  <span class="input-box__text">Email</span>
-                  <input type="text" class="input-box__input input-box__input_text-left input-box__input_wide" placeholder="valeria@gmail.com">
+                <span class="input-box__text">Email</span>
+                <input type="text" class="input-box__input input-box__input_text-left input-box__input_wide"
+                  placeholder="valeria@gmail.com">
               </div>
-              <label class="acept contact-details__acept">
-                <input type="checkbox" class="acept__checkbox">
+              <label class="checkbox contact-details__checkbox">
+                <input type="checkbox" class="checkbox__input">
+                <span class="checkbox__indicator contact-details__checkbox-indicator"></span>
                 Даю согласие на обработку персональных данных, а также ознакомлен с публичной офертой
               </label>
               <div class="contact-details__button-holder">
@@ -897,13 +936,14 @@
             <div class="contact-details__figure contact-details__figure_2"></div>
           </div>
         </div>
-      </div><!--/contact-details-->
+      </div>
+      <!--/contact-details-->
       <div class="offer">
         <div class="keepcenter">
           <div class="offer__inner">
             <div class="offer__teaser teaser">
               <div class="offer__sound-toggler">
-                Нажмите здесь,<br/> чтобы включить звук
+                Нажмите здесь,<br /> чтобы включить звук
               </div>
               <div class="teaser__column">
                 <div class="teaser__video-box"></div>
@@ -921,7 +961,7 @@
             <div class="order-block">
               <div class="order-block__left">
                 <div class="timer-box order-block__timer-box">
-                    09:59
+                  09:59
                 </div>
                 <div class="order-block__rating">
                   23 487 отзывов клиентов
@@ -986,43 +1026,42 @@
         <div class="fail__figure fail__figure_2"></div>
       </div><!-- fail -->
     </main><!-- /main -->
-    <footer class="footer">
-      <div class="keepcenter">
-        <div class="footer__inner">
-          <div class="footer__left">
-            <div class="footer__logo">
-              План кето диеты
-            </div>
-            <ul class="footer__data-list">
-              <li class="footer__data-item">Юридические данные:</li>
-              <li class="footer__data-item">ООО "Линкемед"</li>
-              <li class="footer__data-item">ИНН 7703471895/ОГРН 1197746135168</li>
-              <li class="footer__data-item">г.Москва,ул.Красина,д.27</li>
-              <li class="footer__data-item">Почта: info@instasale.store</li>
-              <li class="footer__data-item">Почта: info@instasale.store</li>
-              <li class="footer__data-item">© 2020 Instasale.store</li>
-            </ul>
+  </div>
+  <footer class="footer">
+    <div class="keepcenter">
+      <div class="footer__inner">
+        <div class="footer__left">
+          <div class="footer__logo">
+            План кето диеты
           </div>
-          <div class="footer__center">
-             <span class="footer__headline footer__headline_bold">
-              Узнайте больше о кето диете
-             </span>
-             <span class="footer__headline footer__headline_bold">
-              Часто задаваемые вопросы
-             </span>
-             <span class="footer__headline footer__headline_bold">
-              Общие условия
-             </span>
-          </div>
-          <div class="footer__right">
-            <span class="footer__headline">
-              Контакты
-            </span>
-          </div>
+          <ul class="footer__data-list">
+            <li class="footer__data-item">Юридические данные:</li>
+            <li class="footer__data-item">ООО "Линкемед"</li>
+            <li class="footer__data-item">ИНН 7703471895/ОГРН 1197746135168</li>
+            <li class="footer__data-item">г.Москва,ул.Красина,д.27</li>
+            <li class="footer__data-item">Почта: info@instasale.store</li>
+            <li class="footer__data-item">© 2020 Instasale.store</li>
+          </ul>
+        </div>
+        <div class="footer__center">
+          <span class="footer__headline footer__headline_bold">
+            Узнайте больше о кето диете
+          </span>
+          <span class="footer__headline footer__headline_bold">
+            Часто задаваемые вопросы
+          </span>
+          <span class="footer__headline footer__headline_bold">
+            Общие условия
+          </span>
+        </div>
+        <div class="footer__right">
+          <span class="footer__headline">
+            Контакты
+          </span>
         </div>
       </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 </body>
 
 </html>

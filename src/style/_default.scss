@@ -51,10 +51,13 @@ body {
     height: auto;
     min-height: 100%;
     position: relative;
-}
+    display: flex;
+    flex-direction: column;
 
-.main {
-    flex-grow: 1;
+    @include respond(md) {
+        min-width: 414px;
+        font-size: rem(12);
+    }
 }
 
 h1, h2, h3 {
@@ -65,18 +68,34 @@ h1, h2, h3 {
 
 h1 {
     font-size: rem(67);
+
+    @include respond(md) {
+        font-size: rem(38);
+    }
 }
 
 h2 {
     font-size: rem(50);
+
+    @include respond(md) {
+      font-size: rem(32);
+    }
 }
 
 h3 {
     font-size: rem(38);
+
+    @include respond(md) {
+        font-size: rem(22);
+    }
 }
 
 h4, h5 {
     font-size: rem(22);
+
+    @include respond(md) {
+        font-size: rem(16);
+    }
 }
 
 p {
@@ -138,4 +157,9 @@ strong {
 
 .overflow-hidden {
     overflow: hidden;
+}
+
+svg {
+    display: block;
+    margin: 0 auto;
 }
