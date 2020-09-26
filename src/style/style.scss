@@ -8,7 +8,7 @@
   max-width: 1110px;
   margin: 0 auto;
 
-  @include respond(md) {
+  @include respond(lg) {
     padding-left: 24px;
     padding-right: 24px;
   }
@@ -451,6 +451,10 @@
     padding-bottom: 115px;
     display: flex;
     flex-direction: column;
+
+    @include respond(md) {
+      padding-bottom: 0;
+    }
   }
 
   &__title {
@@ -458,7 +462,7 @@
     text-transform: uppercase;
     letter-spacing: 3px;
 
-    @include respond(sm) {
+    @include respond(md) {
       margin-bottom: 100px;
     }
   }
@@ -470,7 +474,7 @@
     max-height: 444px;
     margin-bottom: 40px;
 
-    @include respond(sm) {
+    @include respond(md) {
       order: 1;
       height: 337px;
       margin-bottom: 0;
@@ -483,7 +487,7 @@
     position: relative;
     z-index: 100;
 
-    @include respond(sm) {
+    @include respond(md) {
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
@@ -496,13 +500,13 @@
     &:first-child {
       margin-right: 30px;
 
-      @include respond(sm) {
+      @include respond(md) {
         margin-right: 0;
         margin-bottom: 30px;
       }
     }
 
-    @include respond(sm) {
+    @include respond(md) {
       align-self: center;
     }
   }
@@ -523,7 +527,8 @@
       transform: translateX(50%);
       background-image: url('../img/figure1.1.png');
   
-      @include respond(sm) {
+      @include respond(md) {
+        background-position: 50% 100%;
         width: 690px;
         height: 337px;
       }
@@ -540,7 +545,7 @@
       transform: translateY(-50%);
       background-position: 0% 50%;
   
-      @include respond(sm) {
+      @include respond(md) {
         width: 100%;
         height: 430px;
       }
@@ -1756,8 +1761,8 @@
 }
 
 .footer {
-  background: $purple;
   color: $white;
+  background: $purple;
   font-size: 12px;
 
   a {
@@ -1769,6 +1774,15 @@
      padding-bottom: 20px;
      display: flex;
      justify-content: space-between;
+
+
+     @include respond(md) {
+       flex-wrap: wrap;
+     }
+
+     @include respond(xs) {
+       flex-direction: column;
+     }
   }
 
   &__left,
@@ -1778,6 +1792,10 @@
 
   &__center {
     flex-basis: 31.5%;
+
+    @include respond(xs) {
+      order: -1;
+    }
   }
 
   &__left,
@@ -1789,15 +1807,32 @@
   &__center,
   &__right {
     padding-bottom: 1px;
+    min-width: 215px;
   }
 
   &__logo {
     font-size: 22px;
     white-space: nowrap;
     margin-bottom: 30px;
+
+    @include respond(xs) {
+      display: none;
+    }
+
+    &_mobile {
+      display: none;
+
+      @include respond(xs) {
+        display: block;
+      }
+    }
   }
 
-  &__data-list {}
+  &__data-list {
+    @include respond(xs) {
+      margin-bottom: 20px;
+    }
+  }
 
   &__data-item {
     margin-bottom: 1px;
@@ -1808,6 +1843,10 @@
     font-size: 16px;
     text-transform: uppercase;
     margin-bottom: 30px;
+
+    @include respond(lg) {
+      text-transform: none;
+    }
 
     &_bold {
       font-weight: bold;
