@@ -75,7 +75,7 @@ h1 {
 }
 
 h2 {
-    font-size: rem(50);
+    font-size: rem(48);
 
     @include respond(md) {
       font-size: rem(32);
