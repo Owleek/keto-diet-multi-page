@@ -1937,6 +1937,7 @@
   }
 
   &__sound-toggler {
+    font-weight: 500;
     font-size: 14px;
     text-align: center;
     width: 255px;
@@ -1946,6 +1947,14 @@
     left: 0; top: 36px;
     user-select: none;
     cursor: pointer;
+
+    @include respond(md) {
+      top: -5px;
+      left: 50%;
+      width: 178px;
+      font-size: 12px;
+      transform: translate(-50%, -100%);
+    }
 
     &::before {
       content: '';
@@ -1977,6 +1986,15 @@
       transform: translateY(-50%);
       background-position: 100% 50%;
       background-image: url('../img/figure13.1.png');
+
+
+      @include respond(sm) {
+        width: 117px;
+        height: 226px;
+        top: 50%; right: 24px;
+        background-image: url('../img/figure13.1.mob.png');
+        background-position: 50% 50%;
+      }
     }
 
     &_2 {
@@ -1988,13 +2006,18 @@
       bottom: 35px;
       background-position: 50% 100%;
       background-image: url('../img/figure13.2.png');
+
+      @include respond(md) {
+        width: 111px;
+        height: 108px;
+        bottom: auto;
+        top: 59%;
+      }
     }
 
     &_3 {
-      max-width: 196px;
-      max-height: 439px;
-      width: 13.61vw;
-      height: 30.48vw;
+      width: 196px;
+      height: 439px;
       top: 35%; left:0;
       transform: translateY(-50%);
       background-image: url('../img/figure1.2.png');
@@ -2005,9 +2028,17 @@
 
 .teaser {
   &__column {
-    max-width: 540px;
+    max-width: 48.64%;
     margin: 0 auto;
     margin-bottom: 30px;
+
+    @include respond(md) {
+      max-width: 60%;
+    }
+
+    @include respond(sm) {
+      max-width: 100%;
+    }
   }
 
   &__video-box {
@@ -2015,11 +2046,20 @@
     height: 433px;
     background: $grey;
     margin-bottom: 25px;
+
+    @include respond(sm) {
+      margin-bottom: 30px;
+      height: 293px;
+    }
   }
 
   &__caption {
     padding: 0 8.55%;
     text-align: center;
+    
+    @include respond(sm) {
+      padding: 0;
+    }
   }
 }
 
@@ -2027,16 +2067,41 @@
   display: flex;
   justify-content: space-between;
 
+  @include respond(md) {
+    flex-direction: column;
+    align-items: center;
+  }
+
   &__left {
     margin-right: 40px;
+
+    @include respond(md) {
+      margin-right: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
   }
 
   &__right {
     width: 48.64%;
+
+    @include respond(md) {
+      width: 60%;
+    }
+
+    @include respond(sm) {
+      width: 100%;
+    }
   }
 
   &__timer-box {
     margin-bottom: 30px;
+
+    @include respond(md) {
+      margin-bottom: 18px;
+    }
   }
 
   &__rating {
@@ -2045,6 +2110,10 @@
     text-align: center;
     font-size: 22px;
     position: relative;
+
+    @include respond(md) {
+      font-size: 14px;
+    }
 
     &::before {
       content: '';
@@ -2057,11 +2126,21 @@
       background-size: contain;
       background-position: 50% 50%;
       background-image: url('../img/rating.png');
+
+      @include respond(md) {
+        top: 6px;
+        width: 180px;
+        height: 25px;
+      }
     }
   }
 
   &__button {
     margin-bottom: 35px;
+
+    @include respond(md) {
+      margin-bottom: 24px;
+    }
   }
 
   &__payments {
@@ -2082,6 +2161,12 @@
   color: $white;
   background-color: $green;
   user-select: none;
+
+  @include respond(md) {
+    padding: 4px 20px;
+    width: 178px;
+    font-size: 40px;
+  }
 }
 
 .order {
@@ -2099,6 +2184,12 @@
     font-size: 38px;
     font-weight: bold;
     margin-bottom: 20px;
+    padding-right: 20px;
+
+    @include respond(md) {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
   }
 
   &__holder {
@@ -2108,6 +2199,10 @@
     align-items: flex-end;
     justify-content: center;
     margin-bottom: 20px;
+
+    @include respond(md) {
+      margin-bottom: 30px;
+    }
   }
 
   &__current {
@@ -2115,6 +2210,10 @@
     font-size: 80px;
     font-weight: bold;
     margin-right: 25px;
+
+    @include respond(md) {
+      font-size: 60px;
+    }
   }
 
   &__previous {
@@ -2131,8 +2230,34 @@
   user-select: none;
 
   &__item {
+    width: 74px;
+    height: 34px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0% 50%;
+
+    @include respond(md) {
+      height: 24px;
+      width: 53px;
+    }
+
+    &_1 {
+      background-image: url('../img/visa.png');
+    }
+    &_2 {
+      background-image: url('../img/mastercard.png');
+    }
+    &_3 {
+      background-image: url('../img/mir.png');
+    }
+
     &:not(:last-child) {
       margin-right: 25px;
+
+      @include respond(md) {
+        margin-right: 16px;
+      }
     }
   }
 }
@@ -2142,12 +2267,24 @@
   font-weight: 600;
   letter-spacing: -1px;
 
+  @include respond(md) {
+    font-size: 16px;
+  }
+
   &__item {
     position: relative;
     padding-left: 50px;
 
+    @include respond(md) {
+      padding-left: 40px;
+    }
+
     &:not(:last-child) {
       margin-bottom: 30px;
+
+      @include respond(md) {
+        margin-bottom: 15px;
+      }
     }
 
     &::before {
@@ -2160,6 +2297,11 @@
       background-position: 50% 50%;
       background-size: contain;
       background-image: url('../img/svg/v-big.svg');
+
+      @include respond(md) {
+        width: 20px;
+        height: 14px;
+      }
     }
   }
 }
@@ -2169,8 +2311,40 @@
   color: $grey;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  user-select: none;
+
+  @include respond(md) {
+    font-size: 14px;
+  }
+
+  &__item {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0% 50%;
+    user-select: none;
+    margin-left: 26px;
+    width: 65px;
+    height: 30px;
+
+    @include respond(md) {
+      margin-left: 15px;
+      width: 43px;
+      height: 20px;
+    }
+
+    &_1 {
+      background-image: url('../img/ico1.png')
+    }
+    &_2 {
+      background-image: url('../img/ico2.png')
+    }
+    &_3 {
+      background-image: url('../img/ico3.png')
+    }
+    &_4 {
+      background-image: url('../img/ico4.png')
+    }
+  }
 }
 
 .fail {
@@ -2376,5 +2550,4 @@
       text-decoration: none !important;
     }
   }
-
 }
