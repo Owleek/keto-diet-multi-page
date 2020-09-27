@@ -130,11 +130,6 @@
   text-align: center;
   cursor: pointer;
   transition: all 0.2s;
-
-  @include respond(md) {
-    font-size: rem(14);
-    padding: rem(10) rem(14);
-  }
 }
 
 .btn-row {
@@ -143,6 +138,7 @@
 
   @include respond(md) {
     font-size: rem(14);
+    padding: rem(10) rem(14);
   }
 
   &.active {
@@ -157,7 +153,8 @@
   padding: rem(20) rem(34);
 
   @include respond(md) {
-    width: 50%;
+    font-size: rem(14);
+    padding: rem(10) rem(14);
   }
   
   &:hover {
@@ -633,6 +630,10 @@
 
   &__title {
     margin-bottom: 30px;
+
+    @include respond(md) {
+      margin-bottom: 15px;
+    }
     
     &_margin_a {
       margin-bottom: 90px;
@@ -645,6 +646,11 @@
 
   &__subtitle {
     margin-bottom: 90px;
+
+    @include respond(md) {
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
   }
 
   &__limit {
@@ -688,11 +694,20 @@
       display: flex;
       flex-wrap: wrap;
       margin-bottom: 15px;
+
+      @include respond(lg) {
+        justify-content: center;
+      }
     }
 
     &_indent_a {
       margin-left: -30px;
-      // padding-left: 30px;
+      padding-left: 30px;
+
+      @include respond(sm) {
+        margin-left: -10px;
+        padding-left: 0;
+      }
     }
   }
 
@@ -709,6 +724,29 @@
   &__btn-cell {
     margin-left: 30px;
     margin-bottom: 20px;
+
+    @include respond(lg) {
+      flex-grow: 1;
+
+      &_order-1 {
+        order: 1;
+      }
+      &_order-2 {
+        order: 2;
+      }
+    }
+
+    @include respond(sm) {
+      flex-basis: calc(50% - 10px);
+      margin-left: 10px;
+      margin-bottom: 10px;
+
+      &_order-1,
+      &_order-2 {
+        flex-basis: calc(100% - 10px);
+      }
+    }
+
   }
 
   &__buttons-holder {
@@ -723,6 +761,14 @@
 
     &_center {
       justify-content: center;
+
+      @include respond(md) {
+        justify-content: space-evenly;
+      }
+
+      @include respond(sm) {
+        justify-content: space-between;
+      }
     }
   }
 
@@ -742,10 +788,18 @@
 
     &_right {
       padding-left: 14.61%;
+      
+      @include respond(md) {
+        padding-left: 0;
+      }
     }
 
     &_center {
       padding: 0 14.61%;
+
+      @include respond(md) {
+        padding: 0;
+      }
     }
   }
   
@@ -790,11 +844,17 @@
     &_3 {
       max-width: 228px;
       max-height: 290px;
+      min-width: 90px;
+      min-height: 115px;
       width: 15.83vw;
       height: 20.13vw;
       background-image: url('../img/figure3.2.png');
       top: 62px; right: 0;
       background-position: 100% 50%;
+
+      @include respond(md) {
+        top: 71px;
+      }
     }
   
     &_4 {
@@ -805,6 +865,10 @@
       background-image: url('../img/figure3.3.png');
       bottom: 0; right: 0;
       background-position: 100% 100%;
+
+      @include respond(md) {
+        display: none;
+      }
     }
   
     &_5 {
@@ -994,6 +1058,13 @@
       height: 25.2vw;
       background-image: url('../img/figure3.1.png');
       background-position: 100% 100%;
+
+      @include respond(md) {
+        width: 273px;
+        height: 212px;
+        margin-left: auto;
+        background-image: url('../img/figure3.1.mob.png');
+      }
     }
   
     &_3 {
@@ -2029,8 +2100,16 @@
       text-transform: none;
     }
 
+    @include respond(md) {
+      margin-bottom: 10px;
+    }
+
     &_bold {
       font-weight: bold;
+
+      @include respond(md) {
+        font-weight: normal;
+      }
     }
     
     a {
