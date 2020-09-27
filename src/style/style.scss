@@ -946,6 +946,15 @@
       top: 50%; right: 0;
       background-position: 100% 50%;
       transform: translateY(-50%);
+
+      @include respond(md) {
+        top: 54%;
+        width: 107px;
+        height: 239px;
+        right: auto;
+        left: 0;
+        transform: rotateY(180deg) translateY(-50%);
+      }
     }
   
     &_9 {
@@ -956,6 +965,19 @@
       background-image: url('../img/figure1.4.png');
       bottom: 0; right: 0;
       background-position: 100% 100%;
+
+      @include respond(md) {
+        top: 54%;
+        left: 0;
+        bottom: auto;
+        right: auto;
+        width: 107px;
+        height: 239px;
+        right: auto;
+        transform: rotateY(180deg) translateY(-50%);
+        background-image: url('../img/figure6.2.png');
+        background-position: 100% 50%;
+      }
     }
   
     &_10 {
@@ -967,6 +989,10 @@
       bottom: 0; left: 0;
       background-position: 0% 100%;
       z-index: -1;
+
+      @include respond(md) {
+        display: none;
+      }
     }
   }
 
@@ -1159,7 +1185,15 @@
       width: 23.12vw;
       height: 36.59vw;
       background-image: url('../img/figure6.1.png');
-      background-position: 100% 100%;
+      background-position: 100% 0%;
+
+      @include respond(md) {
+        right: auto;
+        width: 213px;
+        height: 260px;
+        margin-left: auto;
+        background-size: cover;
+      }
     }
   
     &_6 {
@@ -1170,6 +1204,16 @@
       height: 43.19vw;
       background-image: url('../img/figure7.1.png');
       background-position: 100% 100%;
+
+      @include respond(md) {
+        right: auto;
+        width: 271px;
+        height: 346px;
+        margin-left: auto;
+        background-size: cover;
+        background-position: 100% 0%;
+        margin-top: -175px;
+      }
     }
   
     &_7 {
@@ -1180,6 +1224,16 @@
       height: 49.93vw;
       background-image: url('../img/figure8.1.png');
       background-position: 100% 100%;
+
+      @include respond(md) {
+        right: auto;
+        width: 226px;
+        height: 355px;
+        margin-left: auto;
+        background-size: cover;
+        background-position: 100% 0%;
+        margin-top: -135px;
+      }
     }
   }
 }
