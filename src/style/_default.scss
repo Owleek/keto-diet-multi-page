@@ -43,7 +43,7 @@ html, body {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    min-width: 320px;
+    min-width: 414px;
     color: #000000;
     font-size: rem(16);
     line-height: 1.3;
@@ -55,7 +55,6 @@ body {
     flex-direction: column;
 
     @include respond(md) {
-        min-width: 414px;
         font-size: rem(12);
     }
 }

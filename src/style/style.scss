@@ -879,6 +879,10 @@
       background-image: url('../img/figure4.2.png');
       top: 0; left: 0;
       background-position: 0% 0%;
+
+      @include respond(md) {
+        display: none;
+      }
     }
   
     &_6 {
@@ -889,6 +893,10 @@
       background-image: url('../img/figure4.3.png');
       bottom: 0; right: 0;
       background-position: 100% 100%;
+
+      @include respond(md) {
+        display: none;
+      }
     }
   
     &_7 {
@@ -1071,10 +1079,31 @@
       max-width: 420px;
       max-height: 429px;
       bottom: 0; right: 0;
+      width: 314px;
       width: 29.16vw;
       height: 29.79vw;
       background-image: url('../img/figure4.1.png');
       background-position: 100% 100%;
+
+      @include respond(md) {
+        max-width: 65%;
+        width: 100vw;
+        height: 40vh;
+        margin-top: -200px;
+        background-position: 50% 0%;
+        background-size: cover;
+        overflow: hidden;
+      }
+
+      @include respond(sm) {
+        max-width: 100%;
+        width: 100vw;
+        height: 74.84vw;
+        margin-top: -100px;
+        background-position: 50% 0%;
+        background-size: cover;
+        overflow: hidden;
+      }
     }
   
     &_4 {
