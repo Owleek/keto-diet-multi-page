@@ -45,7 +45,12 @@
   @include respond(md) {
     font-size: rem(16);
     padding: rem(20);
+    width: 100%;
   }
+
+  // @include respond(sm) {
+  //   width: 100%;
+  // }
 
   &:hover {
     transform: scale(1.1);
@@ -309,7 +314,7 @@
 
       @include respond(md) {
         padding: 10px 22px 6px;
-        width: 262px;
+        width: 71%;
       }
     }
 
@@ -322,6 +327,16 @@
 .plan-column {
   padding-right: 17.11%;
   padding-left: 17.11%;
+
+  @include respond(md) {
+   padding-right: 10%;
+   padding-left: 10%;
+  }
+
+  @include respond(sm) {
+   padding-right: 0px;
+   padding-left: 0px;
+  }
 }
 
 .checkbox {
@@ -1797,33 +1812,61 @@
     position: relative;
     padding-top: 140px;
     padding-bottom: 230px;
+
+    @include respond(md) {
+      padding-top: 115px;
+      padding-bottom: 277px;
+    }
   }
 
   &__title {
     text-align: center;
     margin-bottom: 70px;
+
+    @include respond(sm) {
+      margin-bottom: 20px;
+    }
   }
 
   &__subtitle {
     font-weight: 600;
     text-align: center;
     margin-bottom: 70px;
+
+    @include respond(sm) {
+      margin-bottom: 50px;
+    }
   }
 
   &__form {
     padding: 0px 13%;
+
+    @include respond(sm) {
+      padding: 0px;
+    }
   }
 
   &__input-box {
     margin-bottom: 20px;
+    font-size: 22px;
+    padding: 14px 15px 14px 20px;
   }
 
   &__checkbox {
     padding-left: 18px;
     margin-bottom: 50px;
 
+    @include respond(sm) {
+      padding-left: 0px;
+      margin-bottom: 40px;
+    }
+
     &-indicator {
       margin-right: 50px;
+
+      @include respond(sm) {
+        margin-right: 16px;
+      }
     }
   }
 
@@ -1846,6 +1889,12 @@
       bottom: 0;
       background-position: 50% 100%;
       background-image: url('../img/figure12.1.png');
+
+      @include respond(sm) {
+        width: 274px;
+        height: 443px;
+        right: -24px;
+      }
     }
 
     &_2 {
@@ -1857,6 +1906,12 @@
       bottom: 0;
       background-position: 50% 100%;
       background-image: url('../img/figure12.2.png');
+
+      @include respond(sm) {
+        width: 309px;
+        height: 244px;
+        left: -24px;
+      }
     }
   }
 }
