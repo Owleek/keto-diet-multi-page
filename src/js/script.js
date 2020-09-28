@@ -21,21 +21,22 @@ $(document).ready(function(){
       0:{
           items:1, 
           nav:false,
-          dots:true
+          dots:true,
+          loop:true
       },
       768:{
           items:2,
           nav:false,
           dots:true,
           slideBy:1,
-          loop:false
+          loop:true
       },
       915:{
         items:3,
         nav:false,
         dots:true,
         slideBy:1,
-        loop:false
+        loop:true
       }
     }
   });
