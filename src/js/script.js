@@ -1,4 +1,227 @@
 $(document).ready(function(){
+
+	/** Pager */
+	const Pager = function(args) {
+		this.pages = args.pages;
+		this.activePage = args.activePage || 0;
+		this.subPages = {};
+		const callbacks = args.callbacks;
+		const menus = args.menus;
+
+		this.pages.forEach((function (page, index) {
+			const subPages = Array.from(page.querySelectorAll(".subpage"));
+
+			this.subPages[index] = {
+				subPages: subPages,
+				activeSubpage: 0,
+			}
+		}).bind(this));
+
+		this.nextPage = function() {
+			const subItem = this.subPages[this.activePage];
+			const nextSubPage = subItem.activeSubpage + 1;
+
+			if (nextSubPage < subItem.subPages.length) {
+				// Идем вперед по вложенным блокам
+				subItem.activeSubpage = nextSubPage;
+
+				const oldActive = setInactive(subItem.subPages);
+				runHideCallback(oldActive);
+
+				const activatedPage = setActive(subItem.subPages, nextSubPage);
+				runShowCallback(activatedPage);
+			} else {
+				// Идем вперед по блокам верхнего уровня
+				const next = this.activePage + 1;
+
+				if (this.pages[next]) {
+					this.activePage = next;
+
+					const oldActive = setInactive(this.pages);
+					runHideCallback(oldActive);
+
+					const activatedPage = setActive(this.pages, this.activePage);
+					runShowCallback(activatedPage);
+
+					const currentPageSubItem = this.subPages[this.activePage];
+					if (currentPageSubItem.subPages.length) {
+						const activatedSubPage = setActive(currentPageSubItem.subPages, currentPageSubItem.activeSubpage);
+						runShowCallback(activatedSubPage);
+					}
+
+					const oldPageSubItem = this.subPages[this.activePage - 1];
+					if (oldPageSubItem.subPages.length) {
+						const oldSubPage = setInactive(oldPageSubItem.subPages, oldPageSubItem.activeSubpage);
+						runHideCallback(oldSubPage);
+					}
+				}
+			}
+
+			handleMenus();
+		};
+
+		this.prevPage = function() {
+			const subItem = this.subPages[this.activePage];
+			const prevSubPage = subItem.activeSubpage - 1;
+
+			if (prevSubPage >= 0) {
+				// Идем назад по вложенным блокам
+				subItem.activeSubpage = prevSubPage;
+				const oldActive = setInactive(subItem.subPages);
+				runHideCallback(oldActive);
+
+				const activatedPage = setActive(subItem.subPages, prevSubPage);
+				runShowCallback(activatedPage);
+			} else {
+				// Идем назад по блокам верхнего уровня
+				const prev = this.activePage - 1;
+
+				if (prev >= 0) {
+					this.activePage = prev;
+
+					const oldActive = setInactive(this.pages);
+					runHideCallback(oldActive);
+
+					const activatedPage = setActive(this.pages, prev);
+					runShowCallback(activatedPage);
+
+					const currentPageSubItem = this.subPages[this.activePage];
+					if (currentPageSubItem.subPages.length) {
+						const oldActiveSubPage = setActive(currentPageSubItem.subPages, currentPageSubItem.activeSubpage);
+						runShowCallback(oldActiveSubPage);
+					}
+
+					const oldPageSubItem = this.subPages[this.activePage + 1];
+					if (oldPageSubItem.subPages.length) {
+						const oldSubPage = setInactive(oldPageSubItem.subPages, oldPageSubItem.activeSubpage);
+						runHideCallback(oldSubPage);
+					}
+				}
+			}
+
+			handleMenus();
+		};
+
+		handleMenus = (function() {
+			const activePage = this.pages[this.activePage];
+			const activeSubItem = this.subPages[this.activePage];
+			const activeSubpage = activeSubItem.subPages[activeSubItem.activeSubpage] || {};
+
+			menus.forEach(function(menu) {
+				menu.items.forEach(function (item, index) {
+					item.classList.remove("active");
+
+					const dataFor = item.dataset.for;
+
+					if (activePage.id === dataFor || activeSubpage.id === dataFor) {
+						item.classList.add("active");
+
+						if (menu.onActive) {
+							menu.onActive(item, index);
+						}
+					}
+				});
+			});
+		}).bind(this);
+
+		const runShowCallback = function(node) {
+			if (node.id && callbacks[node.id] && callbacks[node.id].onShow) {
+				callbacks[node.id].onShow(node);
+			}
+		};
+
+		const runHideCallback = function(node) {
+			if (node.id && callbacks[node.id] && callbacks[node.id].onHide) {
+				callbacks[node.id].onHide(node);
+			}
+		};
+
+		const setActive = function(pages, index) {
+			if (pages[index]) {
+				pages[index].classList.add("active");
+			}
+
+			return pages[index];
+		};
+
+		const setInactive = function (pages) {
+			const oldActive = pages.filter(function(page) {
+				return page.classList.contains("active")
+			})[0];
+
+			oldActive.classList.remove("active");
+
+			return oldActive;
+		};
+	};
+
+	const sceneFigures = Array.from(document.getElementsByClassName("js-scene-figure"));
+	const progressItems = Array.from(document.getElementsByClassName("js-progress-item"));
+
+	const pager = new Pager({
+		pages: Array.from(document.getElementsByClassName("page")),
+		activePage: 0,
+		callbacks: {
+			/**
+			 * По названию айдишника можно вызвать коллбек на появление и скрытие блока.
+			 * В данном случае когда пявится или исчезнет блок второго уровня, у которого есть айди activity.
+			 */
+			activity: {
+				onShow: function(node) {
+					console.log("Блок активность появился", node);
+				},
+				onHide: function(node) {
+					console.log("Блок активность скрылся", node);
+				}
+			},
+			activityParent: {
+				onShow: function(node) {
+					console.log("Блок активность родитель появился", node);
+				},
+				onHide: function(node) {
+					console.log("Блок активность родитель скрылся", node);
+				}
+			},
+			parameters: {
+				onShow: function(node) {
+					console.log("Блок parameters появился", node);
+				},
+				onHide: function(node) {
+					console.log("Блок parameters скрылся", node);
+				}
+			}
+		},
+		menus: [
+			{
+				items: sceneFigures,
+				onActive: function(node, index) {
+					// console.log("active scene figure node", node);
+				}
+			},
+			{
+				items: progressItems,
+				onActive: function(node, index) {
+					const prevProgressItem = progressItems[index - 1];
+					const nextProgressItem = progressItems[index + 1];
+
+					progressItems.forEach(function(item) {
+						item.classList.remove("show");
+					});
+
+					if (prevProgressItem) {
+						prevProgressItem.classList.add("show");
+					}
+
+					if (nextProgressItem) {
+						nextProgressItem.classList.add("show");
+					}
+				}
+			},
+		]
+	});
+
+	window.pager = pager;
+
   let target = document.querySelector('.resume__list');
   let query = window.matchMedia("(max-width: 1023px)");
 
@@ -13,14 +236,14 @@ $(document).ready(function(){
   }
   // =========================================== set mobile class for carousel
 
-  $('#werewolf').owlCarousel({  
+  $('#werewolf').owlCarousel({
     loop: false,
     margin: 10,
     autoHeight:true,
     responsiveClass:true,
     responsive:{
       0:{
-          items:1, 
+          items:1,
           nav:false,
           dots:true,
           loop:true
@@ -42,14 +265,14 @@ $(document).ready(function(){
     }
   });
 
-  $('#carousel').owlCarousel({  
+  $('#carousel').owlCarousel({
     loop: false,
     margin: 0,
     autoHeight:true,
     responsiveClass:true,
     responsive:{
       0:{
-          items:1, 
+          items:1,
           nav:false,
           dots:true
       },
@@ -77,7 +300,7 @@ $(document).ready(function(){
   // =========================================== Toggle radio-buttons
 
 
-  let infoBtns = document.querySelectorAll('.info-btn'); 
+  let infoBtns = document.querySelectorAll('.info-btn');
 
   infoBtns.forEach(function(item){
     item.addEventListener('click', function(){
@@ -93,7 +316,7 @@ $(document).ready(function(){
 
   let btnAcept = document.querySelectorAll('.button_acept');
 
-  btnAcept.forEach(function(item){        
+  btnAcept.forEach(function(item){
     item.addEventListener('click', function(){
       this.classList.add('active');
     })
@@ -113,7 +336,7 @@ $(document).ready(function(){
 
 		if(item == 1){
       let calc=Math.ceil((weight/((height/100)*(height/100)))*100)/100;
-				
+
       if(calc <= 16){
         card.addClass(`class-1`);
         text_value.html('Выраженный дефицит массы тела');
@@ -134,11 +357,11 @@ $(document).ready(function(){
         card.addClass(`class-5`);
         text_value.html('Ожирение резкое');
       }
-        
+
 		} else if (item == 2){
 			//Метаболический возраст
       let mAge = '';
-      
+
 			if(sex == 1){
 				mAge = Math.round(0.629 * age + 18.56);
 			} else{
@@ -181,7 +404,7 @@ $(document).ready(function(){
 			call_from=Math.round((bmr*amr)-(bmr*amr)*0.2);
 			call_to=call_from+100;
       text_value.html(call_from+'-'+call_to);
-      
+
 		} else if (item == 4){
 			//Вода
       let l='';
@@ -293,7 +516,7 @@ $(document).ready(function(){
 			text_value.html(Math.round(good_weight)+label);
 		} else if(item==8){
 			//Кетогенная диета
-			//Нечего считать 
+			//Нечего считать
 		}
-	}  
+	}
 });

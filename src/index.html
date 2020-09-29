@@ -33,7 +33,7 @@
       </div>
     </header>
     <main class="main">
-      <div class="start-screen">
+      <div class="page start-screen active">
         <div class="keepcenter">
           <div class="start-screen__inner relative">
             <h1 class="start-screen__title">
@@ -56,21 +56,21 @@
         <div class="start-screen__figure start-screen__figure_3"></div>
         <div class="start-screen__figure start-screen__figure_4"></div>
       </div><!--/start-screen-->
-      <div class="scene">
+      <div class="page scene" id="activityParent">
         <div class="keepcenter">
           <div class="scene__inner">
             <div class="sidebar scene__sidebar">
-              <div class="sidebar__figure sidebar__figure_1 active"></div>
-              <div class="sidebar__figure sidebar__figure_2"></div>
-              <div class="sidebar__figure sidebar__figure_3"></div>
-              <div class="sidebar__figure sidebar__figure_4"></div>
-              <div class="sidebar__figure sidebar__figure_5"></div>
-              <div class="sidebar__figure sidebar__figure_6"></div>
-              <div class="sidebar__figure sidebar__figure_7"></div>
+              <div class="js-scene-figure sidebar__figure sidebar__figure_1 active" data-for="activity"></div>
+              <div class="js-scene-figure sidebar__figure sidebar__figure_2" data-for="protein"></div>
+              <div class="js-scene-figure sidebar__figure sidebar__figure_3" data-for="vegetables"></div>
+              <div class="js-scene-figure sidebar__figure sidebar__figure_4" data-for="food"></div>
+              <div class="js-scene-figure sidebar__figure sidebar__figure_5" data-for="places"></div>
+              <div class="js-scene-figure sidebar__figure sidebar__figure_6" data-for="habits"></div>
+              <div class="js-scene-figure sidebar__figure sidebar__figure_7" data-for="parameters"></div>
               <!-- /sidebar__figure -->
               <div class="sidebar__inner">
                 <div class="progress-bar">
-                  <div class="progress-bar__point progress-bar__point_1">
+                  <div class="js-progress-item progress-bar__point progress-bar__point_1" data-for="gender">
                     <span class="progress-bar__text">
                       Пол
                     </span>
@@ -78,7 +78,7 @@
                       0%
                     </span>
                   </div>
-                  <div class="progress-bar__point progress-bar__point_2 show">
+                  <div class="js-progress-item progress-bar__point progress-bar__point_2" data-for="activity">
                     <span class="progress-bar__text">
                       Физическая<br />
                       активность
@@ -87,7 +87,7 @@
                       12%
                     </span>
                   </div>
-                  <div class="progress-bar__point progress-bar__point_3 active">
+                  <div class="js-progress-item progress-bar__point progress-bar__point_3" data-for="protein">
                     <span class="progress-bar__text">
                       Источники<br />
                       белков
@@ -96,7 +96,7 @@
                       24%
                     </span>
                   </div>
-                  <div class="progress-bar__point progress-bar__point_4 show">
+                  <div class="js-progress-item progress-bar__point progress-bar__point_4" data-for="vegetables">
                     <span class="progress-bar__text">
                       Овощи
                     </span>
@@ -104,7 +104,7 @@
                       37%
                     </span>
                   </div>
-                  <div class="progress-bar__point progress-bar__point_5">
+                  <div class="js-progress-item progress-bar__point progress-bar__point_5" data-for="food">
                     <span class="progress-bar__text">
                       Продукты
                     </span>
@@ -112,7 +112,7 @@
                       50%
                     </span>
                   </div>
-                  <div class="progress-bar__point progress-bar__point_6">
+                  <div class="js-progress-item progress-bar__point progress-bar__point_6" data-for="places">
                     <span class="progress-bar__text">
                       Каждый<br />
                       день
@@ -121,7 +121,7 @@
                       62%
                     </span>
                   </div>
-                  <div class="progress-bar__point progress-bar__point_7">
+                  <div class="js-progress-item progress-bar__point progress-bar__point_7" data-for="habits">
                     <span class="progress-bar__text">
                       Плохие<br />
                       привычки
@@ -130,7 +130,7 @@
                       75%
                     </span>
                   </div>
-                  <div class="progress-bar__point progress-bar__point_8">
+                  <div class="js-progress-item progress-bar__point progress-bar__point_8" data-for="parameters">
                     <span class="progress-bar__text">
                       Параметры
                     </span>
@@ -141,7 +141,7 @@
                 </div>
               </div><!-- /sidebar__inner -->
             </div><!-- /sidebar -->
-            <div class="scene__main stage-content active">
+            <div class="subpage scene__main stage-content active" id="activity">
               <h2 class="scene__title scene__title_margin_a scene__limit scene__limit_center">
                 Физическая активность
               </h2>
@@ -189,7 +189,7 @@
                 </div>
               </div>
             </div><!-- /stage-content -->
-            <div class="scene__main stage-content">
+            <div class="subpage scene__main stage-content" id="protein">
               <div class="scene__limit scene__limit_center">
                 <h2 class="scene__title">
                   Источники белков
@@ -259,7 +259,7 @@
                 </div>
               </div>
             </div><!-- /stage-content -->
-            <div class="scene__main stage-content">
+            <div class="subpage scene__main stage-content" id="vegetables">
               <div class="scene__limit scene__limit_center">
                 <h2 class="scene__title">
                   Овощи
@@ -329,7 +329,7 @@
               </div>
               <div class="scene__figure scene__figure_5"></div>
             </div><!-- /stage-content -->
-            <div class="scene__main stage-content">
+            <div class="subpage scene__main stage-content" id="food">
               <div class="scene__plan-column">
                 <div class="scene__limit scene__limit_center">
                   <h2 class="scene__title">
@@ -387,7 +387,7 @@
                 </div>
               </div>
             </div><!-- /stage-content -->
-            <div class="scene__main stage-content">
+            <div class="subpage scene__main stage-content" id="places">
               <div class="scene__plan-column">
                 <div class="scene__pick">
                   <h2 class="scene__title scene__title_margin_a scene__limit scene__limit_center">
@@ -435,7 +435,7 @@
                 </div>
               </div>
             </div><!-- /stage-content -->
-            <div class="scene__main stage-content">
+            <div class="subpage scene__main stage-content" id="habits">
               <div class="scene__plan-column">
                 <div class="scene__limit scene__limit_center">
                   <h2 class="scene__title scene__title_margin_a">
@@ -488,7 +488,7 @@
                 </div>
               </div>
             </div><!-- /stage-content -->
-            <div class="scene__main stage-content">
+            <div class="subpage scene__main stage-content" id="parameters">
               <div class="scene__plan-column">
                 <div class="scene__limit scene__limit_center">
                   <h2 class="scene__title scene__title_margin_a">
@@ -570,7 +570,7 @@
           <!-- scene__figure_10 inside stage-content -->
         </div><!-- /scene__stage-arts -->
       </div><!-- /scene -->
-      <div class="creation">
+      <div class="page creation">
         <div class="keepcenter">
           <div class="creation__inner">
             <h2 class="creation__title">
@@ -643,7 +643,7 @@
           </div>
         </div>
       </div><!--/creation-->
-      <div class="resume-content active">
+      <div class="page resume-content">
         <div class="keepcenter">
           <div class="resume">
             <h2 class="resume__title plan-column">
@@ -720,7 +720,7 @@
                       </span>
                     </div>
                     <div class="resume-card__text resume-card__bottom">
-                      Рекомендуемое количество калорий: 
+                      Рекомендуемое количество калорий:
                       <span class="resume-card__value">
                         1342 – 1442
                       </span>
@@ -747,7 +747,7 @@
                       </span>
                     </div>
                     <div class="resume-card__text resume-card__bottom">
-                      Рекомендуемое количество воды: 
+                      Рекомендуемое количество воды:
                       <span class="resume-card__value">
                         1.5 л
                       </span>
@@ -796,7 +796,7 @@
                       </span>
                     </div>
                     <div class="resume-card__text resume-card__bottom">
-                      Достижимый вес для первых 28 дней вашей кето диеты: 
+                      Достижимый вес для первых 28 дней вашей кето диеты:
                       <span class="resume-card__value">
                         59 кг
                       </span>
@@ -821,7 +821,7 @@
                       </span>
                     </div>
                     <div class="resume-card__text resume-card__bottom">
-                      Ваш вес после кето-плана будет: 
+                      Ваш вес после кето-плана будет:
                       <span class="resume-card__value">
                         59 кг
                       </span>
@@ -1038,7 +1038,7 @@
           </div>
         </div>
       </div><!--/resume-content-->
-      <div class="contact-details">
+      <div class="page contact-details">
         <div class="keepcenter">
           <div class="contact-details__inner plan-column">
             <h2 class="contact-details__title">
@@ -1074,7 +1074,7 @@
           </div>
         </div>
       </div><!--/contact-details-->
-      <div class="offer">
+      <div class="page offer">
         <div class="keepcenter">
           <div class="offer__inner">
             <div class="offer__teaser teaser">
@@ -1147,7 +1147,7 @@
         <div class="offer__figure offer__figure_2"></div>
         <div class="offer__figure offer__figure_3"></div>
       </div><!-- offer -->
-      <div class="fail">
+      <div class="page fail">
         <div class="keepcenter">
           <div class="fail__inner plan-column">
             <h2 class="fail__title">
