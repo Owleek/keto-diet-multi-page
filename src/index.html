@@ -55,9 +55,8 @@
         <div class="start-screen__figure start-screen__figure_2"></div>
         <div class="start-screen__figure start-screen__figure_3"></div>
         <div class="start-screen__figure start-screen__figure_4"></div>
-      </div>
-      <!--/start-screen-->
-      <div class="scene active">
+      </div><!--/start-screen-->
+      <div class="scene">
         <div class="keepcenter">
           <div class="scene__inner">
             <div class="sidebar scene__sidebar">
@@ -148,26 +147,26 @@
               </h2>
               <div class="scene__plan-column">
                 <div class="scene__pick">
-                  <div class="btn-row scene__btn-row">
+                  <label class="btn-row scene__btn-row">
                     Я занимаюсь 5-7 раз в неделю
-                    <input type="checkbox" hidden>
-                  </div>
-                  <div class="btn-row scene__btn-row">
+                    <input type="radio" class="input-hidden" name="activity">
+                  </label>
+                  <label class="btn-row scene__btn-row">
                     Минимальная физическая активность
-                    <input type="checkbox" hidden>
-                  </div>
-                  <div class="btn-row scene__btn-row">
+                    <input type="radio" class="input-hidden" name="activity">
+                  </label>
+                  <label class="btn-row scene__btn-row">
                     Я часто хожу пешком
-                    <input type="checkbox" hidden>
-                  </div>
-                  <div class="btn-row scene__btn-row">
+                    <input type="radio" class="input-hidden" name="activity">
+                  </label>
+                  <label class="btn-row scene__btn-row">
                     Я занимаюсь 1-2 раза в неделю
-                    <input type="checkbox" hidden>
-                  </div>
-                  <div class="btn-row scene__btn-row">
+                    <input type="radio" class="input-hidden" name="activity">
+                  </label>
+                  <label class="btn-row scene__btn-row">
                     Я занимаюсь 3-5 раз в неделю
-                    <input type="checkbox" hidden>
-                  </div>
+                    <input type="radio" class="input-hidden" name="activity">
+                  </label>
                 </div>
                 <div class="scene__buttons-holder">
                   <button class="button button_control">
@@ -567,7 +566,7 @@
         <div class="scene__stage-arts">
           <div class="scene__figure scene__figure_9"></div>
         </div><!-- /scene__stage-arts -->
-        <div class="scene__stage-arts active">
+        <div class="scene__stage-arts">
           <!-- scene__figure_10 inside stage-content -->
         </div><!-- /scene__stage-arts -->
       </div><!-- /scene -->
@@ -643,16 +642,15 @@
             </div>
           </div>
         </div>
-      </div>
-      <!--/creation-->
-      <div class="resume-content">
+      </div><!--/creation-->
+      <div class="resume-content active">
         <div class="keepcenter">
           <div class="resume">
             <h2 class="resume__title plan-column">
               Ваша персональная кето диета готова
             </h2>
             <div class="resume__button-holder">
-              <button class="button">
+              <button class="button button_acept">
                 Получить диету прямо сейчас
               </button>
             </div>
@@ -851,7 +849,7 @@
               </ul>
             </div>
             <div class="resume__button-holder resume__button-holder_mobile-hidden">
-              <button class="button">
+              <button class="button button_acept">
                 Получить диету прямо сейчас
               </button>
             </div>
@@ -1016,15 +1014,14 @@
               </li>
             </ul>
             <div class="kit__button-holder">
-              <button class="button">
+              <button class="button button_acept">
                 Получить диету прямо сейчас
               </button>
             </div>
             <div class="kit__figure"></div>
           </div>
         </div>
-      </div>
-      <!--/resume-content-->
+      </div><!--/resume-content-->
       <div class="contact-details">
         <div class="keepcenter">
           <div class="contact-details__inner plan-column">
@@ -1051,7 +1048,7 @@
                 Даю согласие на обработку персональных данных, а также ознакомлен с публичной офертой
               </label>
               <div class="contact-details__button-holder">
-                <button class="button">
+                <button class="button button_acept">
                   Получить диету
                 </button>
               </div>
@@ -1060,8 +1057,7 @@
             <div class="contact-details__figure contact-details__figure_2"></div>
           </div>
         </div>
-      </div>
-      <!--/contact-details-->
+      </div><!--/contact-details-->
       <div class="offer">
         <div class="keepcenter">
           <div class="offer__inner">
@@ -1071,7 +1067,7 @@
               </div>
               <div class="teaser__column">
                 <div class="teaser__video-box"></div>
-                <button class="button button_block">
+                <button class="button button_block button_acept">
                   Получить план питания
                 </button>
               </div>

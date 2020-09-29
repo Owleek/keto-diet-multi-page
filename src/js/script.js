@@ -11,6 +11,7 @@ $(document).ready(function(){
     target.classList.remove('owl-theme');
     target.removeAttribute('id', 'werewolf');
   }
+  // =========================================== set mobile class for carousel
 
   $('#werewolf').owlCarousel({  
     loop: false,
@@ -61,4 +62,42 @@ $(document).ready(function(){
       }
     }
   });
+  // =========================================== Carousel EnD
+
+  let activityArr = document.getElementsByName('activity');
+
+  activityArr.forEach(function(item){
+    item.addEventListener('change', function(){
+      for(let i = 0; i < activityArr.length; i++) {
+        activityArr[i].closest('.btn-row').classList.remove('active');
+      }
+      item.closest('.btn-row').classList.add('active');
+    })
+  });
+  // =========================================== Toggle radio-buttons
+
+
+  let infoBtns = document.querySelectorAll('.info-btn'); 
+
+  infoBtns.forEach(function(item){
+    item.addEventListener('click', function(){
+      let parentsChildList =  Array.from(this.parentElement.children);
+      parentsChildList.forEach(function(item){
+        if(item.classList.contains('scene-info__text')) {
+          item.classList.toggle('active');
+        }
+      });
+    });
+  })
+  // =========================================== show info-text
+
+  let btnAcept = document.querySelectorAll('.button_acept');
+
+  btnAcept.forEach(function(item){        
+    item.addEventListener('click', function(){
+      this.classList.add('active');
+    })
+  });
+  // =========================================== btn-active
+  
 });
