@@ -1,4 +1,9 @@
 $(document).ready(function(){
+
+
+	// =========================================== set mobile class for carousel
+
+
   let target = document.querySelector('.resume__list');
   let query = window.matchMedia("(max-width: 1023px)");
 
@@ -11,7 +16,6 @@ $(document).ready(function(){
     target.classList.remove('owl-theme');
     target.removeAttribute('id', 'werewolf');
   }
-  // =========================================== set mobile class for carousel
 
   $('#werewolf').owlCarousel({  
     loop: false,
@@ -62,20 +66,7 @@ $(document).ready(function(){
       }
     }
   });
-  // =========================================== Carousel EnD
-
-  let activityArr = document.getElementsByName('activity');
-
-  activityArr.forEach(function(item){
-    item.addEventListener('change', function(){
-      for(let i = 0; i < activityArr.length; i++) {
-        activityArr[i].closest('.btn-row').classList.remove('active');
-      }
-      item.closest('.btn-row').classList.add('active');
-    })
-  });
-  // =========================================== Toggle radio-buttons
-
+	// =========================================== Carousel EnD
 
   let infoBtns = document.querySelectorAll('.info-btn'); 
 
@@ -88,7 +79,8 @@ $(document).ready(function(){
         }
       });
     });
-  })
+	})
+	
   // =========================================== show info-text
 
   let btnAcept = document.querySelectorAll('.button_acept');
@@ -97,40 +89,98 @@ $(document).ready(function(){
     item.addEventListener('click', function(){
       this.classList.add('active');
     })
-  });
-  // =========================================== btn-active
+	});
+	
+	// =========================================== btn-active
+	let resumeCards = document.querySelectorAll('.resume-card');
 
-	let sex=data['gender'];
-	let active=data['p_active'];
-	let age=parseInt(data['age']);
-	let height=parseInt(data['length']);
-	let weight=parseInt(data['weight']);
-	let new_weight=parseInt(data['new_weight']);
 
-	function calc(item){
+	const UserData = function () {
+
+		this.data = {
+			gender: null,
+			active: null,
+			age: null,
+			weight: null,
+			height: null,
+			new_weight: null,
+		};
+
+		this.handleChange = function (name, value) {
+			if (name in this.data) {
+				this.data[name] = value;
+
+				for(let i = 0; i < resumeCards.length; i++) {
+					calc(i, this.data);
+					console.log(this.data);
+				}
+			}
+		}
+	};
+
+	const data = new UserData();
+
+	let gendorButtons = document.querySelectorAll('.start-screen__button');
+  let activityArr = document.getElementsByName('activity');
+
+	gendorButtons.forEach(function(item){
+		item.addEventListener('click', function() {
+			data.handleChange('gender', this.value);
+		})
+	})
+
+  activityArr.forEach(function(item){
+    item.addEventListener('change', function(){
+      for(let i = 0; i < activityArr.length; i++) {
+        activityArr[i].closest('.btn-row').classList.remove('active');
+      }
+			item.closest('.btn-row').classList.add('active');
+			data.handleChange('active', this.value);
+    })
+	});
+	
+	function calc(item, data){
+		let sex = data.gender;
+		let age = data.age;
+		let height = data.height;
+		let weight = data.weight;
+		let active = data.active;
+		let new_weight = data.new_weight;
     let text_value = $(`.resume-card_${item} .resume-card__value`);
-    let card = $(`.resume-card_${item}`);
+		let card = $(`.resume-card_${item}`);
+		
+		function removeCardClassIndex() {
+			let maxIndexOfClasses = 10;
+			for(let i = 0; i <= maxIndexOfClasses; i++) {
+				card.removeClass(`class-${i}`);
+			}
+		}
 
 		if(item == 1){
       let calc=Math.ceil((weight/((height/100)*(height/100)))*100)/100;
 				
       if(calc <= 16){
+				removeCardClassIndex();
         card.addClass(`class-1`);
         text_value.html('Выраженный дефицит массы тела');
 
       } else if (calc>16 && calc<=18.5){
+				removeCardClassIndex();
         card.addClass(`class-2`);
         text_value.html('Недостаточная (дефицит) масса тела');
 
       } else if (calc>18.5 && calc<=24.99){
+				removeCardClassIndex();
         card.addClass(`class-3`);
         text_value.html('Норма');
 
       } else if (calc>24.99 && calc<=35){
+				removeCardClassIndex();
         card.addClass(`class-4`);
         text_value.html('Ожирение');
 
       } else if (calc>35){
+				removeCardClassIndex();
         card.addClass(`class-5`);
         text_value.html('Ожирение резкое');
       }
@@ -146,10 +196,13 @@ $(document).ready(function(){
       }
 
       if(mAge < 18) {
+				removeCardClassIndex();
         card.addClass(`class-1`);
       } else if (mAge > 18 && mAge < 40) {
+				removeCardClassIndex();
         card.addClass(`class-2`);
       } else if(mAge > 40) {
+				removeCardClassIndex();
         card.addClass(`class-3`);
       }
 
@@ -296,4 +349,23 @@ $(document).ready(function(){
 			//Нечего считать 
 		}
 	}  
+
+	let personData = document.getElementsByName('person-data');
+	personData.forEach(function(item) {
+		item.addEventListener('change', function(){
+			if(item.id === "age") {
+				data.handleChange('age', parseInt(item.value));
+
+			} else if (item.id === "height") {
+				data.handleChange("height", parseInt(item.value));
+				
+			} else if (item.id === "weight") {
+				data.handleChange("weight", parseInt(item.value));
+				
+			} else if (item.id === "wish-weight") {
+				data.handleChange("new_weight", parseInt(item.value));
+				
+			}
+		});
+	});
 });

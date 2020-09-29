@@ -15,7 +15,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="js/owl.carousel.min.js"></script>
-  <script src="js/script.js"></script>
+  <script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -33,7 +33,7 @@
       </div>
     </header>
     <main class="main">
-      <div class="start-screen">
+      <div class="start-screen active">
         <div class="keepcenter">
           <div class="start-screen__inner relative">
             <h1 class="start-screen__title">
@@ -43,10 +43,10 @@
               <div class="start-screen__figure start-screen__figure_1"></div>
             </div>
             <div class="start-screen__buttons-holder">
-              <button class="button button_elipse button_wide start-screen__button">
+              <button class="button button_elipse button_wide start-screen__button" value="2">
                 План для женщин
               </button>
-              <button class="button button_elipse button_wide button_blue start-screen__button">
+              <button class="button button_elipse button_wide button_blue start-screen__button" value="1">
                 План для мужчин
               </button>
             </div>
@@ -56,7 +56,7 @@
         <div class="start-screen__figure start-screen__figure_3"></div>
         <div class="start-screen__figure start-screen__figure_4"></div>
       </div><!--/start-screen-->
-      <div class="scene">
+      <div class="scene active">
         <div class="keepcenter">
           <div class="scene__inner">
             <div class="sidebar scene__sidebar">
@@ -149,23 +149,23 @@
                 <div class="scene__pick">
                   <label class="btn-row scene__btn-row">
                     Я занимаюсь 5-7 раз в неделю
-                    <input type="radio" class="input-hidden" name="activity">
+                    <input type="radio" class="input-hidden" name="activity" value = "5">
                   </label>
                   <label class="btn-row scene__btn-row">
                     Минимальная физическая активность
-                    <input type="radio" class="input-hidden" name="activity">
+                    <input type="radio" class="input-hidden" name="activity" value = "1">
                   </label>
                   <label class="btn-row scene__btn-row">
                     Я часто хожу пешком
-                    <input type="radio" class="input-hidden" name="activity">
+                    <input type="radio" class="input-hidden" name="activity" value = "2">
                   </label>
                   <label class="btn-row scene__btn-row">
                     Я занимаюсь 1-2 раза в неделю
-                    <input type="radio" class="input-hidden" name="activity">
+                    <input type="radio" class="input-hidden" name="activity" value = "3">
                   </label>
                   <label class="btn-row scene__btn-row">
                     Я занимаюсь 3-5 раз в неделю
-                    <input type="radio" class="input-hidden" name="activity">
+                    <input type="radio" class="input-hidden" name="activity" value = "4">
                   </label>
                 </div>
                 <div class="scene__buttons-holder">
@@ -488,7 +488,7 @@
                 </div>
               </div>
             </div><!-- /stage-content -->
-            <div class="scene__main stage-content">
+            <div class="scene__main stage-content active">
               <div class="scene__plan-column">
                 <div class="scene__limit scene__limit_center">
                   <h2 class="scene__title scene__title_margin_a">
@@ -500,25 +500,25 @@
                     <span class="input-box__text">
                       Возраст
                     </span>
-                    <input type="text" class="input-box__input">
+                    <input type="text" class="input-box__input" name="person-data" id="age">
                   </div>
                   <div class="input-box scene__input-box">
                     <span class="input-box__text">
                       Рост (см)
                     </span>
-                    <input type="text" class="input-box__input">
+                    <input type="text" class="input-box__input" name="person-data" id="height">
                   </div>
                   <div class="input-box scene__input-box">
                     <span class="input-box__text">
                       Вес (кг)
                     </span>
-                    <input type="text" class="input-box__input">
+                    <input type="text" class="input-box__input" name="person-data" id="weight">
                   </div>
                   <div class="input-box scene__input-box">
                     <span class="input-box__text">
                       Желаемый вес (кг)
                     </span>
-                    <input type="text" class="input-box__input">
+                    <input type="text" class="input-box__input" name="person-data" id="wish-weight">
                   </div>
                 </div>
                 <div class="scene__buttons-holder">
