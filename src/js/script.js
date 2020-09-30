@@ -1,9 +1,6 @@
 $(document).ready(function(){
 
-
 	// =========================================== set mobile class for carousel
-
-
   let target = document.querySelector('.resume__list');
   let query = window.matchMedia("(max-width: 1023px)");
 
@@ -92,8 +89,8 @@ $(document).ready(function(){
 	});
 	
 	// =========================================== btn-active
-	let resumeCards = document.querySelectorAll('.resume-card');
 
+	let resumeCards = document.querySelectorAll('.resume-card');
 
 	const UserData = function () {
 
@@ -121,6 +118,12 @@ $(document).ready(function(){
 
 	let gendorButtons = document.querySelectorAll('.start-screen__button');
   let activityArr = document.getElementsByName('activity');
+  let meatArr = document.getElementsByName('meat');
+  let seafoodArr = document.getElementsByName('seafood');
+  let vegetablesArr = document.getElementsByName('vegetables');
+  let foodArr = document.getElementsByName('food');
+  let dayArr = document.getElementsByName('day');
+  let habbitsArr = document.getElementsByName('habbits');
 
 	gendorButtons.forEach(function(item){
 		item.addEventListener('click', function() {
@@ -130,14 +133,111 @@ $(document).ready(function(){
 
   activityArr.forEach(function(item){
     item.addEventListener('change', function(){
-      for(let i = 0; i < activityArr.length; i++) {
-        activityArr[i].closest('.btn-row').classList.remove('active');
-      }
-			item.closest('.btn-row').classList.add('active');
+			changeRadio(activityArr, item);
 			data.handleChange('active', this.value);
     })
 	});
+
+  meatArr.forEach(function(item){
+    item.addEventListener('change', function(){
+			let label = item.closest('label');
+			let labelActive = label.classList.contains('active')
+			let restrict = item.dataset.restrict === "meat";
+
+			if(restrict) {
+					for(let i = 0; i < meatArr.length; i++) {
+						meatArr[i].closest('label').classList.remove('active')
+					}
+					if(labelActive) {
+						label.classList.remove('active')
+					} else {
+						label.classList.add('active')
+					}
+
+			} else if (!labelActive && !restrict) {
+				label.classList.add('active');
+				for(let i = 0; i < meatArr.length; i++) {
+					if(meatArr[i].dataset.restrict === "meat" && meatArr[i].closest('label').classList.contains('active')) {
+						meatArr[i].closest('label').classList.remove('active');
+					}
+				}
+			} else {
+				label.classList.remove('active');
+			}
+    })
+	});
+
+  seafoodArr.forEach(function(item){
+    item.addEventListener('change', function(){
+			let label = item.closest('label');
+			let labelActive = label.classList.contains('active')
+			let restrict = item.dataset.restrict === "seafood";
+
+			if(restrict) {
+					for(let i = 0; i < seafoodArr.length; i++) {
+						seafoodArr[i].closest('label').classList.remove('active')
+					}
+					if(labelActive) {
+						label.classList.remove('active')
+					} else {
+						label.classList.add('active')
+					}
+
+			} else if (!labelActive && !restrict) {
+				label.classList.add('active');
+				for(let i = 0; i < seafoodArr.length; i++) {
+					if(seafoodArr[i].dataset.restrict === "seafood" && seafoodArr[i].closest('label').classList.contains('active')) {
+						seafoodArr[i].closest('label').classList.remove('active');
+					}
+				}
+			} else {
+				label.classList.remove('active');
+			}
+    })
+	});
 	
+	vegetablesArr.forEach(function(item){
+    item.addEventListener('change', function(){
+			changeCheckbox(item);
+    })
+	});
+
+	foodArr.forEach(function(item){
+    item.addEventListener('change', function(){
+			changeCheckbox(item);
+    })
+	});
+
+	dayArr.forEach(function(item){
+    item.addEventListener('change', function(){
+			changeRadio(dayArr,item);
+    })
+	});
+
+	habbitsArr.forEach(function(item){
+    item.addEventListener('change', function(){
+			changeRadio(habbitsArr,item);
+    })
+	});
+
+	function changeCheckbox(item) {
+		let label = item.closest('label');
+		let labelActive = label.classList.contains('active');
+
+		if(labelActive) {
+			label.classList.remove('active')
+		} else {
+			label.classList.add('active')
+		}
+	}
+
+	function changeRadio(arr, item) {
+		for(let i = 0; i < arr.length; i++) {
+			arr[i].closest('label').classList.remove('active');
+		}
+		item.closest('label').classList.add('active');
+	}
+
 	function calc(item, data){
 		let sex = data.gender;
 		let age = data.age;
@@ -286,8 +386,6 @@ $(document).ready(function(){
 		}else if(item==6){
 			//Достижимый вес
 				let good_weight='';
-				// let libra=$('.block-diet-6__image span');
-				let value=$('.block-diet-6__value');
 				let label=" кг";
 			if(weight>new_weight){
 					let maxdown='';
