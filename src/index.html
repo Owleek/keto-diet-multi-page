@@ -500,25 +500,29 @@
                     <span class="input-box__text">
                       Возраст
                     </span>
-                    <input type="text" class="input-box__input" name="person-data" id="age">
+                    <input type="number"  min="16" max="150" maxlength="3" placeholder="30" class="input-box__input" name="person-data" id="age">
+                    <span class="input-error">Ваш возраст должен быть не меньше 16 и не больше 150</span>
                   </div>
                   <div class="input-box scene__input-box">
                     <span class="input-box__text">
                       Рост (см)
                     </span>
-                    <input type="text" class="input-box__input" name="person-data" id="height">
+                    <input type="number" min="100" max="250" maxlength="3" placeholder="170" class="input-box__input" name="person-data" id="height">
+                    <span class="input-error">Ваш рост должен быть не меньше 100 и не больше 250 см</span>
                   </div>
                   <div class="input-box scene__input-box">
                     <span class="input-box__text">
                       Вес (кг)
                     </span>
-                    <input type="text" class="input-box__input" name="person-data" id="weight">
+                    <input type="number" min="30" max="500" maxlength="3" placeholder="70" class="input-box__input" name="person-data" id="weight">
+                    <span class="input-error">Ваш вес должен быть не меньше 30 и не больше 500 кг</span>
                   </div>
                   <div class="input-box scene__input-box">
                     <span class="input-box__text">
                       Желаемый вес (кг)
                     </span>
-                    <input type="text" class="input-box__input" name="person-data" id="wish-weight">
+                    <input type="number" min="20" max="150" maxlength="3" placeholder="65" class="input-box__input" name="person-data" id="wish-weight">
+                    <span class="input-error">Желаемый вес должен быть не меньше 20 и не больше 150 кг</span>
                   </div>
                 </div>
                 <div class="scene__buttons-holder">

@@ -167,3 +167,31 @@ svg {
     position: absolute;
     opacity: 0;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+ 
+input[type=number] {
+  -moz-appearance:textfield;
+}
+
+.input-error {
+    display: none;
+    position: absolute;
+    color: white;
+    font-size: 8px;
+    text-align: center;
+    left: 50%; transform: translateX(-50%);
+    bottom: 2px;
+    opacity: 0;
+    transition: all 0.4s;
+    white-space: nowrap;
+}
+
+input:invalid:not(:placeholder-shown) + .input-error {
+    opacity: 1;
+	display: inline-block;
+}
