@@ -123,7 +123,8 @@ $(document).ready(function(){
   let vegetablesArr = document.getElementsByName('vegetables');
   let foodArr = document.getElementsByName('food');
   let dayArr = document.getElementsByName('day');
-  let habbitsArr = document.getElementsByName('habbits');
+	let habbitsArr = document.getElementsByName('habbits');
+	let busy = false;
 
 	gendorButtons.forEach(function(item){
 		item.addEventListener('click', function() {
@@ -602,4 +603,56 @@ $(document).ready(function(){
 			home();
 		});
 	});
+
+  document.querySelector('.js-count-start').addEventListener('click', function (){
+		if(!busy) {
+			setTimeout(animateCreation, 200);
+		}
+	});
+
+
+	//================ animation
+	function animateCreation() {
+		let creationSuccess = document.querySelector('.creation__success');
+		let loader = document.querySelector('.fill-box__loader');
+		let percent = document.querySelector('.fill-box__progress');
+		let textArr = document.querySelectorAll('.creation__text');
+		let delay =   +(10000 / textArr.length).toFixed();
+		let counter = 0;
+		let index = 0;
+
+		loader.classList.add('load-animation');
+
+		let percentTimeout = setTimeout(function tick(){
+			counter++;
+			percent.textContent = `${counter}%`;
+
+			percentTimeout = setTimeout(tick, 96);
+
+			if(counter >= 100) {
+				clearTimeout(percentTimeout);
+			}
+		}, 96);
+
+
+		let textTimeout = setTimeout(function slide(){
+			if(textArr[index] && textArr[index].classList.contains('active')) {
+				textArr[index].classList.remove('active');
+			}
+			index++;
+			if(textArr[index]) {
+				textArr[index].classList.add('active');
+			}
+
+			textTimeout =  setTimeout(slide, delay);
+			
+			if(index >= textArr.length) {
+				clearTimeout(textTimeout);
+				creationSuccess.style.opacity = 1;
+				busy = false;
+				loader.classList.remove('load-animation');
+				loader.style.height = '100%';
+			}
+		}, delay);
+	}
 });
