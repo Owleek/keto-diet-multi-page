@@ -112,7 +112,6 @@ $(document).ready(function(){
 
 				for(let i = 0; i < resumeCards.length; i++) {
 					calc(i, this.data);
-					console.log(this.data);
 				}
 			}
 		}
@@ -366,6 +365,143 @@ $(document).ready(function(){
 				data.handleChange("new_weight", parseInt(item.value));
 				
 			}
+		});
+	});
+
+	document.getElementById('mail-form').addEventListener('submit', function(event){
+		event.preventDefault();
+	})
+
+	
+	let sectionIndex = 0;
+	let stageIndex = 0;
+
+	let sidebarFigures = document.querySelectorAll('.sidebar__figure');
+	let progressbarPoints = document.querySelectorAll('.progress-bar__point');
+	let stageFigures = document.querySelectorAll('.scene__stage-arts');
+	let stages = document.querySelectorAll('.js-stage');
+	let sections = document.querySelectorAll('.js-section');
+	
+	let stageNextButtons = document.querySelectorAll('.js-next-stage');
+	let stagePrevButtons = document.querySelectorAll('.js-prev-stage');
+	let sectionNextButtons = document.querySelectorAll('.js-next-section');
+	let sectionPrevButtons = document.querySelectorAll('.js-prev-section');
+	let homeButtons = document.querySelectorAll('.js-home');
+
+	function addSectionClass() {
+		if(sections[sectionIndex] !== undefined) {
+			sections[sectionIndex].classList.add('active');			
+		}
+	};
+
+	function removeSectionClass() {
+		if(sections[sectionIndex] !== undefined) {
+			sections[sectionIndex].classList.remove('active');			
+		}
+	};
+
+	function addBlocksClass() {
+		if(progressbarPoints[stageIndex] !== undefined) {
+			progressbarPoints[stageIndex].classList.add('show');			
+		}
+		if(progressbarPoints[stageIndex + 1] !== undefined) {
+			progressbarPoints[stageIndex + 1].classList.add('active');
+		}
+		if(progressbarPoints[stageIndex + 2] !== undefined){
+			progressbarPoints[stageIndex + 2].classList.add('show');
+		}
+		if(sidebarFigures[stageIndex] !== undefined) {
+			sidebarFigures[stageIndex].classList.add('active');
+		}
+		if(stageFigures[stageIndex] !== undefined) {
+			stageFigures[stageIndex].classList.add('active');
+		}
+		if(stages[stageIndex] !== undefined) {
+			stages[stageIndex].classList.add('active');
+		}
+	}
+
+	function removeBlocksClass() {
+		if(progressbarPoints[stageIndex] !== undefined) {
+			progressbarPoints[stageIndex].classList.remove('show');			
+		}
+		if(progressbarPoints[stageIndex + 1] !== undefined) {
+			progressbarPoints[stageIndex + 1].classList.remove('active');
+		}
+		if(progressbarPoints[stageIndex + 2] !== undefined){
+			progressbarPoints[stageIndex + 2].classList.remove('show');
+		}
+		if(sidebarFigures[stageIndex] !== undefined) {
+			sidebarFigures[stageIndex].classList.remove('active');
+		}
+		if(stageFigures[stageIndex] !== undefined) {
+			stageFigures[stageIndex].classList.remove('active');
+		}
+		if(stages[stageIndex] !== undefined) {
+			stages[stageIndex].classList.remove('active');
+		}
+	}
+
+	function nextSection() {
+		removeSectionClass();
+		sectionIndex++;
+		addSectionClass();
+	}
+
+	function prevSection() {
+		removeSectionClass();
+		sectionIndex--;
+		addSectionClass();
+	}
+
+	function nextBlock() {
+		removeBlocksClass();
+		stageIndex++;
+		addBlocksClass();
+	}
+
+	function prevBlock() {
+		removeBlocksClass();
+		stageIndex--;
+		addBlocksClass();
+	}
+
+	function home() {
+		removeSectionClass();
+		removeBlocksClass();
+		sectionIndex = 0;
+		stageIndex = 0;
+		addSectionClass();
+		addBlocksClass();
+	};
+
+	stageNextButtons.forEach(function(item) {
+		item.addEventListener('click', function(){
+			nextBlock();
+		});
+	});
+
+	stagePrevButtons.forEach(function(item) {
+		item.addEventListener('click', function(){
+			prevBlock();
+		});
+	});
+
+	sectionNextButtons.forEach(function(item) {
+		item.addEventListener('click', function(){
+			nextSection();
+		});
+	});
+
+	sectionPrevButtons.forEach(function(item) {
+		item.addEventListener('click', function(){
+			prevSection();
+		});
+	});
+
+	homeButtons.forEach(function(item) {
+		item.addEventListener('click', function(){
+			home();
 		});
 	});
 });

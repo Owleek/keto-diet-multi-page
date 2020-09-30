@@ -23,7 +23,7 @@
     <header class="header">
       <div class="keepcenter">
         <div class="header__inner">
-          <div class="header__logo">
+          <div class="header__logo js-home">
             Лого
           </div>
           <div>
@@ -33,7 +33,7 @@
       </div>
     </header>
     <main class="main">
-      <div class="start-screen fade-animation">
+      <div class="js-section start-screen fade-animation active">
         <div class="keepcenter">
           <div class="start-screen__inner relative">
             <h1 class="start-screen__title">
@@ -43,10 +43,10 @@
               <div class="start-screen__figure start-screen__figure_1"></div>
             </div>
             <div class="start-screen__buttons-holder">
-              <button class="button button_elipse button_wide start-screen__button" value="2">
+              <button class="button button_elipse button_wide start-screen__button js-next-section" value="2">
                 План для женщин
               </button>
-              <button class="button button_elipse button_wide button_blue start-screen__button" value="1">
+              <button class="button button_elipse button_wide button_blue start-screen__button js-next-section" value="1">
                 План для мужчин
               </button>
             </div>
@@ -56,21 +56,21 @@
         <div class="start-screen__figure start-screen__figure_3"></div>
         <div class="start-screen__figure start-screen__figure_4"></div>
       </div><!--/start-screen-->
-      <div class="scene fade-animation">
+      <div class="js-section scene fade-animation">
         <div class="keepcenter">
           <div class="scene__inner">
             <div class="sidebar scene__sidebar">
-              <div class="sidebar__figure sidebar__figure_1 active"></div>
-              <div class="sidebar__figure sidebar__figure_2"></div>
-              <div class="sidebar__figure sidebar__figure_3"></div>
-              <div class="sidebar__figure sidebar__figure_4"></div>
-              <div class="sidebar__figure sidebar__figure_5"></div>
-              <div class="sidebar__figure sidebar__figure_6"></div>
-              <div class="sidebar__figure sidebar__figure_7"></div>
+              <div class="sidebar__figure sidebar__figure_1 fade-animation active"></div>
+              <div class="sidebar__figure sidebar__figure_2 fade-animation"></div>
+              <div class="sidebar__figure sidebar__figure_3 fade-animation"></div>
+              <div class="sidebar__figure sidebar__figure_4 fade-animation"></div>
+              <div class="sidebar__figure sidebar__figure_5 fade-animation"></div>
+              <div class="sidebar__figure sidebar__figure_6 fade-animation"></div>
+              <div class="sidebar__figure sidebar__figure_7 fade-animation"></div>
               <!-- /sidebar__figure -->
               <div class="sidebar__inner">
                 <div class="progress-bar">
-                  <div class="progress-bar__point progress-bar__point_1">
+                  <div class="progress-bar__point progress-bar__point_1 show">
                     <span class="progress-bar__text">
                       Пол
                     </span>
@@ -78,7 +78,7 @@
                       0%
                     </span>
                   </div>
-                  <div class="progress-bar__point progress-bar__point_2 show">
+                  <div class="progress-bar__point progress-bar__point_2 active">
                     <span class="progress-bar__text">
                       Физическая<br />
                       активность
@@ -87,7 +87,7 @@
                       12%
                     </span>
                   </div>
-                  <div class="progress-bar__point progress-bar__point_3 active">
+                  <div class="progress-bar__point progress-bar__point_3 show">
                     <span class="progress-bar__text">
                       Источники<br />
                       белков
@@ -96,7 +96,7 @@
                       24%
                     </span>
                   </div>
-                  <div class="progress-bar__point progress-bar__point_4 show">
+                  <div class="progress-bar__point progress-bar__point_4">
                     <span class="progress-bar__text">
                       Овощи
                     </span>
@@ -141,7 +141,7 @@
                 </div>
               </div><!-- /sidebar__inner -->
             </div><!-- /sidebar -->
-            <div class="scene__main stage-content fade-animation active">
+            <div class="scene__main js-stage fade-animation active">
               <h2 class="scene__title scene__title_margin_a scene__limit scene__limit_center">
                 Физическая активность
               </h2>
@@ -169,13 +169,13 @@
                   </label>
                 </div>
                 <div class="scene__buttons-holder">
-                  <button class="button button_control">
+                  <button class="button button_control js-prev-section">
                     Назад
                   </button>
                   <div class="progress-percent">
                     12 %
                   </div>
-                  <button class="button button_control">
+                  <button class="button button_control js-next-stage">
                     Продолжить
                   </button>
                 </div>
@@ -189,7 +189,7 @@
                 </div>
               </div>
             </div><!-- /stage-content -->
-            <div class="scene__main stage-content fade-animation">
+            <div class="scene__main js-stage fade-animation">
               <div class="scene__limit scene__limit_center">
                 <h2 class="scene__title">
                   Источники белков
@@ -238,13 +238,13 @@
                   </div>
                 </div>
                 <div class="scene__buttons-holder scene__buttons-holder_center">
-                  <button class="button button_control">
+                  <button class="button button_control js-prev-stage">
                     Назад
                   </button>
                   <div class="progress-percent">
                     24 %
                   </div>
-                  <button class="button button_control">
+                  <button class="button button_control js-next-stage">
                     Продолжить
                   </button>
                 </div>
@@ -259,7 +259,7 @@
                 </div>
               </div>
             </div><!-- /stage-content -->
-            <div class="scene__main stage-content fade-animation">
+            <div class="scene__main js-stage fade-animation">
               <div class="scene__limit scene__limit_center">
                 <h2 class="scene__title">
                   Овощи
@@ -309,13 +309,13 @@
                   </div>
                 </div>
                 <div class="scene__buttons-holder scene__buttons-holder_center">
-                  <button class="button button_control">
+                  <button class="button button_control js-prev-stage">
                     Назад
                   </button>
                   <div class="progress-percent">
                     37 %
                   </div>
-                  <button class="button button_control">
+                  <button class="button button_control js-next-stage">
                     Продолжить
                   </button>
                 </div>
@@ -329,7 +329,7 @@
               </div>
               <div class="scene__figure scene__figure_5"></div>
             </div><!-- /stage-content -->
-            <div class="scene__main stage-content fade-animation">
+            <div class="scene__main js-stage fade-animation">
               <div class="scene__plan-column">
                 <div class="scene__limit scene__limit_center">
                   <h2 class="scene__title">
@@ -366,13 +366,13 @@
                   </div>
                 </div>
                 <div class="scene__buttons-holder scene__buttons-holder_center">
-                  <button class="button button_control">
+                  <button class="button button_control js-prev-stage">
                     Назад
                   </button>
                   <div class="progress-percent">
                     50 %
                   </div>
-                  <button class="button button_control">
+                  <button class="button button_control js-next-stage">
                     Продолжить
                   </button>
                 </div>
@@ -387,7 +387,7 @@
                 </div>
               </div>
             </div><!-- /stage-content -->
-            <div class="scene__main stage-content fade-animation">
+            <div class="scene__main js-stage fade-animation">
               <div class="scene__plan-column">
                 <div class="scene__pick">
                   <h2 class="scene__title scene__title_margin_a scene__limit scene__limit_center">
@@ -415,13 +415,13 @@
                   </div>
                 </div>
                 <div class="scene__buttons-holder">
-                  <button class="button button_control">
+                  <button class="button button_control js-prev-stage">
                     Назад
                   </button>
                   <div class="progress-percent">
                     62 %
                   </div>
-                  <button class="button button_control">
+                  <button class="button button_control js-next-stage">
                     Продолжить
                   </button>
                 </div>
@@ -435,7 +435,7 @@
                 </div>
               </div>
             </div><!-- /stage-content -->
-            <div class="scene__main stage-content fade-animation">
+            <div class="scene__main js-stage fade-animation">
               <div class="scene__plan-column">
                 <div class="scene__limit scene__limit_center">
                   <h2 class="scene__title scene__title_margin_a">
@@ -469,13 +469,13 @@
                   </div>
                 </div>
                 <div class="scene__buttons-holder">
-                  <button class="button button_control">
+                  <button class="button button_control js-prev-stage">
                     Назад
                   </button>
                   <div class="progress-percent">
                     75 %
                   </div>
-                  <button class="button button_control">
+                  <button class="button button_control js-next-stage">
                     Продолжить
                   </button>
                 </div>
@@ -488,7 +488,7 @@
                 </div>
               </div>
             </div><!-- /stage-content -->
-            <div class="scene__main stage-content fade-animation">
+            <div class="scene__main js-stage fade-animation">
               <div class="scene__plan-column">
                 <div class="scene__limit scene__limit_center">
                   <h2 class="scene__title scene__title_margin_a">
@@ -522,13 +522,13 @@
                   </div>
                 </div>
                 <div class="scene__buttons-holder">
-                  <button class="button button_control">
+                  <button class="button button_control js-prev-stage">
                     Назад
                   </button>
                   <div class="progress-percent">
                     87 %
                   </div>
-                  <button class="button button_control">
+                  <button class="button button_control js-next-section">
                     Продолжить
                   </button>
                 </div>
@@ -570,7 +570,7 @@
           <!-- scene__figure_10 inside stage-content -->
         </div><!-- /scene__stage-arts -->
       </div><!-- /scene -->
-      <div class="creation fade-animation">
+      <div class="js-section creation fade-animation">
         <div class="keepcenter">
           <div class="creation__inner">
             <h2 class="creation__title">
@@ -578,45 +578,7 @@
             </h2>
             <div class="fill-box">
               <div class="fill-box__progress">15%</div>
-              <svg class="tree-size">
-                <pattern id="water" width="1" height="1" patternContentUnits="objectBoundingBox">
-                  <defs>
-                    <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stop-color="#00ffa4" stop-opacity="1" />
-                      <stop offset="100%" stop-color="#00653a" stop-opacity="1" />
-                    </linearGradient>
-                  </defs>
-                  <rect width="350" height="1" fill="url(#grad1)" />
-                </pattern>
-                <g>
-                  <svg id="text" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 383.53 421.18">
-                    <defs>
-                      <style>
-                        .cls-1 {
-                          fill: #d8d8d8;
-                        }
-                      </style>
-                    </defs>
-                    <g id="Layer_2" data-name="Layer 2">
-                      <g id="Layer_1-2" data-name="Layer 1">
-                        <path class="cls-1"
-                          d="M317.72,112.66c-2.07-.43-4.11-.38-6.17-.64a46.38,46.38,0,0,0-33.06-64.87A46.26,46.26,0,0,0,246,52.54,81.57,81.57,0,0,0,90.36,64.19,46.58,46.58,0,0,0,65.05,89.3a46.63,46.63,0,0,0-41.84,83.07,28.36,28.36,0,0,0,45.93,33.22c15-.11,33.77,4.19,49.54,21.49,15.55,54.14-26.14,177.39-26.14,177.39l104.29,16.11s-18.47-94.76-5.05-148.28c17.25-16,41.27-17.22,59.38-15.11a80.27,80.27,0,0,0,33.63,15.63,81.76,81.76,0,1,0,32.93-160.16ZM90.15,150.4a47.38,47.38,0,0,0,8.49,2.65,46.34,46.34,0,0,0,26.72-2.42c1.88,1.22,3.94,2.19,5.92,3.26-.72,10.77-2.25,22.26-5.55,30.06-5.57,13.16-30.06-7.3-44-20.52A46.19,46.19,0,0,0,90.15,150.4Zm9.17,54.82a77.68,77.68,0,0,0-26.4-6.07,28.26,28.26,0,0,0,1.53-17.05c8.3,6.69,18.87,15,32.27,25.31a29.58,29.58,0,0,1,7.56,8.94C108.72,211.18,103.34,206.89,99.32,205.22ZM197.08,257c7.69-16.72,19.12-25.38,30.36-29.75a83.37,83.37,0,0,0,12.23,18.92C221.27,245.34,207.37,250.28,197.08,257Zm24.09-80.73a81.3,81.3,0,0,0-1.45,18.88c-28.68,15-32.69-11.43-31.65-33.33A81.79,81.79,0,0,0,238,127.37a46.8,46.8,0,0,0,7.71,5.61A81.15,81.15,0,0,0,221.17,176.27Z" />
-                      </g>
-                    </g>
-                  </svg>
-                </g>
-                <mask id="text-mask">
-                  <use x="0" y="0" xlink:href="#text" opacity="1" fill="#ddd" />
-                </mask>
-                <g id="eff">
-                  <use x="0" y="0" xlink:href="#text" fill="#69a8c9" /><!-- цвет fill объекта(текста) -->
-                  <rect class="water-fill" mask="url(#text-mask)" fill="url(#water)" y="0" width="500" height="400"
-                    opacity="0.9">
-                    <animate attributeType="xml" attributeName="y" from="500" to="0" repeatCount="1" dur="3s" />
-                  </rect>
-                </g>
-                <use xlink:href="#eff" opacity="0.9" />
-              </svg>
+              <div class="fill-box__loader"></div>
             </div>
             <div class="creation__text-holder">
               <p class="creation__text active">
@@ -636,21 +598,21 @@
               Ваш план питания готов!
             </div>
             <div class="creation__button-holder">
-              <button class="button button_elipse button_lightweight button_semi-wide">
+              <button class="button button_elipse button_lightweight button_semi-wide js-next-section">
                 Продолжить
               </button>
             </div>
           </div>
         </div>
       </div><!--/creation-->
-      <div class="resume-content fade-animation">
+      <div class="js-section resume-content fade-animation">
         <div class="keepcenter">
           <div class="resume">
             <h2 class="resume__title plan-column">
               Ваша персональная кето диета готова
             </h2>
             <div class="resume__button-holder">
-              <button class="button button_acept">
+              <button class="button button_acept js-next-section">
                 Получить диету прямо сейчас
               </button>
             </div>
@@ -865,7 +827,7 @@
               </ul>
             </div>
             <div class="resume__button-holder resume__button-holder_mobile-hidden">
-              <button class="button button_acept">
+              <button class="button button_acept js-next-section">
                 Получить диету прямо сейчас
               </button>
             </div>
@@ -1030,7 +992,7 @@
               </li>
             </ul>
             <div class="kit__button-holder">
-              <button class="button button_acept">
+              <button class="button button_acept js-next-section">
                 Получить диету прямо сейчас
               </button>
             </div>
@@ -1038,7 +1000,7 @@
           </div>
         </div>
       </div><!--/resume-content-->
-      <div class="contact-details fade-animation">
+      <div class="js-section contact-details fade-animation">
         <div class="keepcenter">
           <div class="contact-details__inner plan-column">
             <h2 class="contact-details__title">
@@ -1047,7 +1009,7 @@
             <h4 class="contact-details__subtitle">
               Укажите ваше имя и e-mail, куда мы отправим вам вашу персональную диету!
             </h4>
-            <form action="" class="contact-details__form">
+            <form class="contact-details__form" id="mail-form">
               <div class="input-box contact-details__input-box">
                 <span class="input-box__text">Имя</span>
                 <input type="text" class="input-box__input input-box__input_text-left input-box__input_wide"
@@ -1064,7 +1026,7 @@
                 Даю согласие на обработку персональных данных, а также ознакомлен с публичной офертой
               </label>
               <div class="contact-details__button-holder">
-                <button class="button button_acept">
+                <button class="button button_acept js-next-section">
                   Получить диету
                 </button>
               </div>
@@ -1074,7 +1036,7 @@
           </div>
         </div>
       </div><!--/contact-details-->
-      <div class="offer fade-animation">
+      <div class="js-section offer fade-animation">
         <div class="keepcenter">
           <div class="offer__inner">
             <div class="offer__teaser teaser">
@@ -1112,7 +1074,7 @@
                       <span class="price__previous">499Р</span>
                     </div>
                   </div>
-                  <button class="button button_block button_semi-bold order-block__button">
+                  <button class="button button_block button_semi-bold order-block__button js-next-section">
                     Оплатить картой
                   </button>
                   <div class="payments order-block__payments">
@@ -1147,7 +1109,7 @@
         <div class="offer__figure offer__figure_2"></div>
         <div class="offer__figure offer__figure_3"></div>
       </div><!-- offer -->
-      <div class="fail fade-animation">
+      <div class="js-section fail fade-animation">
         <div class="keepcenter">
           <div class="fail__inner plan-column">
             <h2 class="fail__title">
@@ -1156,7 +1118,7 @@
             <p class="fail__text">
               Проверьте платежные данные и повторите попытку
             </p>
-            <button class="button fail__button">
+            <button class="button fail__button js-prev-section">
               Оплатить картой
             </button>
             <div class="fail__figure fail__figure_1"></div>
