@@ -34,6 +34,12 @@ $grey: #B4B1B1;
             @content;
         }
     };
+
+    @if $device == us {
+        @media only screen and (max-width: 415px) {
+            @content;
+        }
+    };
 }
 
 
@@ -43,7 +49,7 @@ html, body {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    min-width: 414px;
+    min-width: 320px;
     color: #000000;
     font-size: rem(16);
     line-height: 1.3;
@@ -71,6 +77,10 @@ h1 {
     @include respond(lg) {
         font-size: rem(38);
     }
+
+    @include respond(us) {
+        font-size: rem(30);
+    }
 }
 
 h2 {
@@ -79,6 +89,10 @@ h2 {
     @include respond(md) {
       font-size: rem(32);
     }
+
+    @include respond(us) {
+      font-size: rem(28);
+    }
 }
 
 h3 {
@@ -86,6 +100,10 @@ h3 {
 
     @include respond(md) {
         font-size: rem(22);
+    }
+
+    @include respond(us) {
+        font-size: rem(18);
     }
 }
 
@@ -184,7 +202,7 @@ input[type=number] {
     color: white;
     font-size: 8px;
     text-align: center;
-    left: 50%; transform: translateX(-50%);
+    left: 0;
     bottom: 2px;
     opacity: 0;
     transition: all 0.4s;

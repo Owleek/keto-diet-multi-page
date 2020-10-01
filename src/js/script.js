@@ -576,24 +576,28 @@ $(document).ready(function(){
 
 	stageNextButtons.forEach(function(item) {
 		item.addEventListener('click', function(){
+			$("html, body").stop().animate({scrollTop:0}, 500);
 			nextBlock();
 		});
 	});
 
 	stagePrevButtons.forEach(function(item) {
 		item.addEventListener('click', function(){
+			$("html, body").stop().animate({scrollTop:0}, 500);
 			prevBlock();
 		});
 	});
 
 	sectionNextButtons.forEach(function(item) {
 		item.addEventListener('click', function(){
+			$("html, body").stop().animate({scrollTop:0}, 500);
 			nextSection();
 		});
 	});
 
 	sectionPrevButtons.forEach(function(item) {
 		item.addEventListener('click', function(){
+			$("html, body").stop().animate({scrollTop:0}, 500);
 			prevSection();
 		});
 	});
@@ -606,10 +610,15 @@ $(document).ready(function(){
 
   document.querySelector('.js-count-start').addEventListener('click', function (){
 		if(!busy) {
+			clearAnimationFootprint();
 			setTimeout(animateCreation, 200);
 		}
 	});
 
+	function clearAnimationFootprint() {
+		document.querySelector('.creation__success').classList.remove('active');
+		document.querySelector('.fill-box__loader').classList.add('load-animation');
+	}
 
 	//================ animation
 	function animateCreation() {
@@ -621,8 +630,6 @@ $(document).ready(function(){
 		let counter = 0;
 		let index = 0;
 
-		loader.classList.add('load-animation');
-
 		let percentTimeout = setTimeout(function tick(){
 			counter++;
 			percent.textContent = `${counter}%`;
@@ -633,7 +640,6 @@ $(document).ready(function(){
 				clearTimeout(percentTimeout);
 			}
 		}, 96);
-
 
 		let textTimeout = setTimeout(function slide(){
 			if(textArr[index] && textArr[index].classList.contains('active')) {
@@ -648,7 +654,7 @@ $(document).ready(function(){
 			
 			if(index >= textArr.length) {
 				clearTimeout(textTimeout);
-				creationSuccess.style.opacity = 1;
+				creationSuccess.classList.add('active');
 				busy = false;
 				loader.classList.remove('load-animation');
 				loader.style.height = '100%';
