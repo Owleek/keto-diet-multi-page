@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
-	// ===========================================
+	// =========================================== catch mobile resolution and set owl-carousel classes 
+
   let target = document.querySelector('.resume__list');
   let query = window.matchMedia("(max-width: 1023px)");
 
@@ -13,6 +14,8 @@ $(document).ready(function(){
     target.classList.remove('owl-theme');
     target.removeAttribute('id', 'werewolf');
   }
+
+	// =========================================== owl-carousel sets 
 
   $('#werewolf').owlCarousel({  
     loop: false,
@@ -62,8 +65,10 @@ $(document).ready(function(){
           loop:false
       }
     }
-  });
-	// =========================================== 
+	});
+	
+
+	// =========================================== show stage info
 
   let infoBtns = document.querySelectorAll('.info-btn'); 
 
@@ -78,7 +83,7 @@ $(document).ready(function(){
     });
 	})
 	
-  // =========================================== 
+  // =========================================== buttons active style
 
   let btnAcept = document.querySelectorAll('.button_acept');
 
@@ -88,7 +93,7 @@ $(document).ready(function(){
     })
 	});
 	
-	// =========================================== 
+	// =========================================== change hover effect on desctop to mobile click
 
 	if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
 	} else {
@@ -103,7 +108,7 @@ $(document).ready(function(){
 		})
 	})
 
-	// =========================================== 
+	// =========================================== Data collection
 	
 	let resumeCards = document.querySelectorAll('.resume-card');
 
@@ -151,6 +156,8 @@ $(document).ready(function(){
 			data.handleChange('gender', this.value);
 		})
 	})
+
+	// =========================================== inputs click change styles
 
   activityArr.forEach(function(item){
     item.addEventListener('change', function(){
@@ -241,6 +248,8 @@ $(document).ready(function(){
     })
 	});
 
+	// =========================================== get UserName and set to html
+
 	userNameInput.addEventListener('change', function(){
 		data.handleChange('userName', this.value);
 
@@ -248,6 +257,8 @@ $(document).ready(function(){
 			item.textContent = ` ${data.data.userName}, `;
 		});
 	});
+
+	// =========================================== Limit input characters
 
 	limit2.forEach(function(item) {
 		item.addEventListener('keyup', function () {
@@ -285,6 +296,8 @@ $(document).ready(function(){
 		}
 		item.closest('label').classList.add('active');
 	}
+
+	// =========================================== Data calculation function
 
 	function calc(item, data){
 		let sex = data.gender;
@@ -507,6 +520,8 @@ $(document).ready(function(){
 		}
 	}  
 
+  // =========================================== user params collect to Data
+
 	let personData = document.getElementsByName('person-data');
 	personData.forEach(function(item) {
 		item.addEventListener('change', function(){
@@ -526,11 +541,14 @@ $(document).ready(function(){
 		});
 	});
 
+	// =========================================== Form prevent Default
+
 	document.getElementById('mail-form').addEventListener('submit', function(event){
 		event.preventDefault();
 	})
-
 	
+	// =========================================== jump to next block
+
 	let sectionIndex = 0;
 	let stageIndex = 0;
 
@@ -667,6 +685,8 @@ $(document).ready(function(){
 		});
 	});
 
+	// =========================================== Animation start trigger
+
   document.querySelector('.js-count-start').addEventListener('click', function (){
 		if(!busy) {
 			clearAnimationFootprint();
@@ -679,7 +699,8 @@ $(document).ready(function(){
 		document.querySelector('.fill-box__loader').classList.add('load-animation');
 	}
 
-	//================ animation
+	// =========================================== animation function
+
 	function animateCreation() {
 		let creationSuccess = document.querySelector('.creation__success');
 		let loader = document.querySelector('.fill-box__loader');
@@ -722,8 +743,8 @@ $(document).ready(function(){
 		}, delay);
 	};
 
+	// =========================================== Timer
 
-	//============================ Timer
 	startTimer('timer', 15);
 
 	function startTimer(id, minuteLimit) {
