@@ -117,11 +117,12 @@ $(document).ready(function(){
 		this.data = {
 			userName: '',
 			gender: null,
-			active: null,
+			active: 1,
 			age: null,
 			weight: null,
 			height: null,
 			new_weight: null,
+			forward: false,
 		};
 
 		this.handleChange = function (name, value) {
@@ -150,6 +151,7 @@ $(document).ready(function(){
 	let userNameInput = document.getElementById('user-name-input');
 	let userName = document.querySelectorAll('.userName');
 	let busy = false;
+	let forward = false;
 
 	gendorButtons.forEach(function(item){
 		item.addEventListener('click', function() {
@@ -248,6 +250,41 @@ $(document).ready(function(){
     })
 	});
 
+	// =========================================== Limit input characters
+	
+	limit2.forEach(function(item) {
+		item.addEventListener('keyup', function () {
+			limitInputCharacters(2, item);
+		})
+	})
+	
+	limit3.forEach(function(item) {
+		item.addEventListener('keyup', function () {
+			limitInputCharacters(3, item);
+		})
+	})
+
+	// =========================================== user params collect to Data
+
+	let personData = document.getElementsByName('person-data');
+	personData.forEach(function(item) {
+		item.addEventListener('change', function(){
+			if(item.id === "age") {
+				data.handleChange('age', parseInt(item.value));
+
+			} else if (item.id === "height") {
+				data.handleChange("height", parseInt(item.value));
+				
+			} else if (item.id === "weight") {
+				data.handleChange("weight", parseInt(item.value));
+				
+			} else if (item.id === "wish-weight") {
+				data.handleChange("new_weight", parseInt(item.value));
+				
+			}
+		});
+	});
+
 	// =========================================== get UserName and set to html
 
 	userNameInput.addEventListener('change', function(){
@@ -257,20 +294,6 @@ $(document).ready(function(){
 			item.textContent = ` ${data.data.userName}, `;
 		});
 	});
-
-	// =========================================== Limit input characters
-
-	limit2.forEach(function(item) {
-		item.addEventListener('keyup', function () {
-			limitInputCharacters(2, item);
-		})
-	})
-
-	limit3.forEach(function(item) {
-		item.addEventListener('keyup', function () {
-			limitInputCharacters(3, item);
-		})
-	})
 	
 	function limitInputCharacters(limitNumber, item) {
 		let characters = item.value.split('');
@@ -297,6 +320,13 @@ $(document).ready(function(){
 		item.closest('label').classList.add('active');
 	}
 
+	function allowMoove() {
+		if(data.data.forward) {
+			return true;
+		}
+		return false;
+	}
+
 	// =========================================== Data calculation function
 
 	function calc(item, data){
@@ -317,8 +347,8 @@ $(document).ready(function(){
 		}
 
 		if(item == 1){
-      let calc=Math.ceil((weight/((height/100)*(height/100)))*100)/100;
-				
+			let calc=Math.ceil((weight/((height/100)*(height/100)))*100)/100;
+
       if(calc <= 16){
 				removeCardClassIndex();
         card.addClass(`class-1`);
@@ -367,15 +397,16 @@ $(document).ready(function(){
 			}
 
 			let devision = mAge % 10;
-			let ageTag;
+			let ageTag = 'лет';
+
 			if(mAge < 21) {
 				ageTag = 'лет';
 			} else if (devision == 1) {
-				ageTag = 'год'
+				ageTag = 'год';
 			} else if (devision > 1 && devision < 5) {
-				ageTag = 'года'
+				ageTag = 'года';
 			} else if (devision > 5) {
-				ageTag = 'лет'
+				ageTag = 'лет';
 			}
 
       text_value.html(`${mAge} ${ageTag}`);
@@ -409,7 +440,7 @@ $(document).ready(function(){
       
 		} else if (item == 4){
 			//Вода
-      let l= 2;
+      let l = 1;
 
 			if(weight>=90){
 				if(active==1){
@@ -519,27 +550,6 @@ $(document).ready(function(){
 			//Нечего считать 
 		}
 	}  
-
-  // =========================================== user params collect to Data
-
-	let personData = document.getElementsByName('person-data');
-	personData.forEach(function(item) {
-		item.addEventListener('change', function(){
-			if(item.id === "age") {
-				data.handleChange('age', parseInt(item.value));
-
-			} else if (item.id === "height") {
-				data.handleChange("height", parseInt(item.value));
-				
-			} else if (item.id === "weight") {
-				data.handleChange("weight", parseInt(item.value));
-				
-			} else if (item.id === "wish-weight") {
-				data.handleChange("new_weight", parseInt(item.value));
-				
-			}
-		});
-	});
 
 	// =========================================== Form prevent Default
 
