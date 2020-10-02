@@ -7,8 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style/reset.css" />
   <link rel="stylesheet" href="style/vendors.css" />
   <link rel="stylesheet" href="style/style.css" />
@@ -195,7 +194,7 @@
                   Источники белков
                 </h2>
                 <p class="scene__subtitle">
-                  Выберите продукты, которые вы хотели&nbspбы<br /> включить в диету
+                  Выберите продукты, которые вы хотели&nbspбы<br class="br-mobile-none" /> включить в диету
                 </p>
               </div>
               <div class="scene__plan-row">
@@ -265,7 +264,7 @@
                   Овощи
                 </h2>
                 <p class="scene__subtitle">
-                  Выберите овощи, которые вы хотели&nbspбы<br />
+                  Выберите овощи, которые вы хотели&nbspбы<br class="br-mobile-none" />
                   включить в диету
                 </p>
               </div>
@@ -336,7 +335,7 @@
                     Продукты
                   </h2>
                   <p class="scene__subtitle">
-                    Выберите продукты, которые вы хотели бы<br /> включить в диету
+                    Выберите продукты, которые вы хотели бы<br class="br-mobile-none" /> включить в диету
                   </p>
                 </div>
                 <div class="scene__pick scene__pick_grid scene__pick_indent_b">
@@ -500,29 +499,25 @@
                     <span class="input-box__text">
                       Возраст
                     </span>
-                    <input type="number"  min="16" max="150" maxlength="3" placeholder="30" class="input-box__input" name="person-data" id="age">
-                    <span class="input-error">Ваш возраст должен быть не меньше 16 и не больше 150</span>
+                    <input type="number" placeholder="30" class="input-box__input js-limit-2" id="age">
                   </div>
                   <div class="input-box scene__input-box">
                     <span class="input-box__text">
                       Рост (см)
                     </span>
-                    <input type="number" min="100" max="250" maxlength="3" placeholder="170" class="input-box__input" name="person-data" id="height">
-                    <span class="input-error">Ваш рост должен быть не меньше 100 и не больше 250 см</span>
+                    <input type="number" placeholder="170" class="input-box__input js-limit-3" id="height">
                   </div>
                   <div class="input-box scene__input-box">
                     <span class="input-box__text">
                       Вес (кг)
                     </span>
-                    <input type="number" min="30" max="500" maxlength="3" placeholder="70" class="input-box__input" name="person-data" id="weight">
-                    <span class="input-error">Ваш вес должен быть не меньше 30 и не больше 500 кг</span>
+                    <input type="number" placeholder="70" class="input-box__input js-limit-3" id="weight">
                   </div>
                   <div class="input-box scene__input-box">
                     <span class="input-box__text">
                       Желаемый вес (кг)
                     </span>
-                    <input type="number" min="20" max="150" maxlength="3" placeholder="65" class="input-box__input" name="person-data" id="wish-weight">
-                    <span class="input-error">Желаемый вес должен быть не меньше 20 и не больше 150 кг</span>
+                    <input type="number" placeholder="65" class="input-box__input js-limit-3" id="wish-weight">
                   </div>
                 </div>
                 <div class="scene__buttons-holder">
@@ -641,7 +636,7 @@
                       </span>
                     </div>
                   </div>
-                  <div class="resume-card__info">
+                  <div class="resume-card__info fast-fade">
                     <h5 class="resume-card__info-title">
                       Индекс массы тела (ИМТ)
                     </h5>
@@ -660,12 +655,12 @@
                       </span>
                     </div>
                     <div class="resume-card__text resume-card__bottom">
-                      <span class="resume-card__value">
+                      <span class="resume-card__value nowrap">
                         32 года
                       </span>
                     </div>
                   </div>
-                  <div class="resume-card__info">
+                  <div class="resume-card__info fast-fade">
                     <h5 class="resume-card__info-title">
                       Метаболический возраст
                     </h5>
@@ -689,12 +684,12 @@
                     </div>
                     <div class="resume-card__text resume-card__bottom">
                       Рекомендуемое количество калорий: 
-                      <span class="resume-card__value">
+                      <span class="resume-card__value nowrap">
                         1342 – 1442
                       </span>
                     </div>
                   </div>
-                  <div class="resume-card__info">
+                  <div class="resume-card__info fast-fade">
                     <h5 class="resume-card__info-title">
                       Калории
                     </h5>
@@ -716,12 +711,12 @@
                     </div>
                     <div class="resume-card__text resume-card__bottom">
                       Рекомендуемое количество воды: 
-                      <span class="resume-card__value">
+                      <span class="resume-card__value nowrap">
                         1.5 л
                       </span>
                     </div>
                   </div>
-                  <div class="resume-card__info">
+                  <div class="resume-card__info fast-fade">
                     <h5 class="resume-card__info-title">
                       Вода
                     </h5>
@@ -744,7 +739,7 @@
                       Вы сбросите вес в этих зонах: щеки, живот, верхние и нижние конечности
                     </div>
                   </div>
-                  <div class="resume-card__info">
+                  <div class="resume-card__info fast-fade">
                     <h5 class="resume-card__info-title">
                       Похудение в зонах
                     </h5>
@@ -765,12 +760,12 @@
                     </div>
                     <div class="resume-card__text resume-card__bottom">
                       Достижимый вес для первых 28 дней вашей кето диеты: 
-                      <span class="resume-card__value">
+                      <span class="resume-card__value nowrap">
                         59 кг
                       </span>
                     </div>
                   </div>
-                  <div class="resume-card__info">
+                  <div class="resume-card__info fast-fade">
                     <h5 class="resume-card__info-title">
                       Достижимый вес
                     </h5>
@@ -790,12 +785,12 @@
                     </div>
                     <div class="resume-card__text resume-card__bottom">
                       Ваш вес после кето-плана будет: 
-                      <span class="resume-card__value">
+                      <span class="resume-card__value nowrap">
                         59 кг
                       </span>
                     </div>
                   </div>
-                  <div class="resume-card__info">
+                  <div class="resume-card__info fast-fade">
                     <h5 class="resume-card__info-title">
                       Мой вес
                     </h5>
@@ -820,7 +815,7 @@
                       Ваша диета
                     </div>
                   </div>
-                  <div class="resume-card__info">
+                  <div class="resume-card__info fast-fade">
                     <h5 class="resume-card__info-title">
                       Кетогенная диета
                     </h5>
@@ -914,7 +909,7 @@
               <div class="review">
                 <div class="review__left">
                   <figure class="review__img">
-                    <img src="img/pic1.jpg" alt="">
+                    <img src="img/pic4.jpg" alt="">
                   </figure>
                   <div class="review__caption">
                     <p class="font-sem4-bold">
@@ -1019,7 +1014,7 @@
               <div class="input-box contact-details__input-box">
                 <span class="input-box__text">Имя</span>
                 <input type="text" class="input-box__input input-box__input_text-left input-box__input_wide"
-                  placeholder="Валерия">
+                  placeholder="Валерия" id="user-name-input" autocomplete="off">
               </div>
               <div class="input-box contact-details__input-box">
                 <span class="input-box__text">Email</span>
@@ -1057,15 +1052,16 @@
               </div>
               <h3 class="teaser__caption">
                 Получите свою кето диету
-                <span class="userName">
-                  Валерия,
-                </span>cпециальное предложение истекает через 15 минут!
+                <span class="userName"></span>
+                cпециальное предложение истекает через 15 минут!
               </h3>
             </div>
             <div class="order-block">
               <div class="order-block__left">
-                <div class="timer-box order-block__timer-box">
-                  09:59
+                <div class="timer-box order-block__timer-box" id="timer">
+                  <span class="minutes">09</span>
+                   : 
+                  <span class="seconds">59</span>
                 </div>
                 <div class="order-block__rating">
                   23 487 отзывов клиентов
