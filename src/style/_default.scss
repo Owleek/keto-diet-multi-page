@@ -223,3 +223,27 @@ input[type=number] {
         display: none;
     }
 }
+
+
+.video-wrap {   
+    position: relative;
+
+    &:before {
+        display: block;
+        padding-top: 80%;
+        content: "";
+    }
+
+    .video__inner {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+
+        .video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}
