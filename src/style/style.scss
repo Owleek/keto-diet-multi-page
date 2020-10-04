@@ -2931,13 +2931,8 @@
      display: flex;
      justify-content: space-between;
 
-
      @include respond(md) {
-       flex-wrap: wrap;
-     }
-
-     @include respond(xs) {
-       flex-direction: column;
+      flex-direction: column;
      }
   }
 
@@ -2949,7 +2944,7 @@
   &__center {
     flex-basis: 31.5%;
 
-    @include respond(xs) {
+    @include respond(md) {
       order: -1;
     }
   }
@@ -2971,21 +2966,21 @@
     white-space: nowrap;
     margin-bottom: 30px;
 
-    @include respond(xs) {
+    @include respond(md) {
       display: none;
     }
 
     &_mobile {
       display: none;
 
-      @include respond(xs) {
+      @include respond(md) {
         display: block;
       }
     }
   }
 
   &__data-list {
-    @include respond(xs) {
+    @include respond(md) {
       margin-bottom: 20px;
     }
   }
