@@ -1649,13 +1649,19 @@
     }
   }
 
+  &__rotate-container {
+    position: relative;
+    padding-bottom: 1px;
+    height: 150px;
+  }
+
   &__text-holder {
-    min-height: 45px;
+    // min-height: 45px;
     text-align: center;
-    margin-bottom: 60px;
+    // margin-bottom: 60px;
 
     @include respond(us) {
-      margin-bottom: 0px;
+      // margin-bottom: 0px;
     }
   }
 
@@ -1680,13 +1686,12 @@
   }
 
   &__subject {
-    font-size: 38px;
+    font-size: 22px;
     font-weight: 600;
     margin-bottom: 40px;
     text-align: center;
 
     @include respond(sm) {
-      font-size: 22px;
       margin-bottom: 20px;
     }
 
@@ -1710,6 +1715,15 @@
     &.active {
       opacity: 1;
     }
+  }
+
+
+  &__text-holder,
+  &__success { 
+    position: absolute;
+    width: 100%;
+    left: 50%; top: 0;
+    transform: translateX(-50%);
   }
 }
 
@@ -3008,6 +3022,9 @@
   }
 }
 
+.cancel-service {
+  margin-top: 10px;
+}
 
 .fade-animation {
   animation-name: fade-animation;

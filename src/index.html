@@ -22,11 +22,15 @@
     <header class="header">
       <div class="keepcenter">
         <div class="header__inner">
-          <div class="header__logo js-home">
-            Лого
+          <div class="header__logo">
+            <a href="" class="js-home">
+              Лого
+            </a>
           </div>
           <div>
-            Контакты
+            <a href="#contacts" class="scrollTo">
+              Контакты
+            </a>
           </div>
         </div>
       </div>
@@ -174,7 +178,7 @@
                   <div class="progress-percent">
                     12 %
                   </div>
-                  <button class="button button_control js-next-stage">
+                  <button class="button button_control js-next-stage" data-check="activity">
                     Продолжить
                   </button>
                 </div>
@@ -182,7 +186,7 @@
                   <span class="info-btn scene-info__btn"></span>
                   <p class="scene-info__text">
                     Важный фактор, который определяет количество еды в программе питания – уровень физической
-                    активности. Чтобы добиться желаемого веса, пожалуйста, выберите ответ, которые наиболее точно
+                    активности. Чтобы добиться желаемого веса, пожалуйста, выберите ответ, который наиболее точно
                     соответствует Вашему образу жизни.
                   </p>
                 </div>
@@ -201,39 +205,39 @@
                 <div class="scene__pick scene__pick_grid scene__pick_indent_a">
                   <label class="btn-cell btn-cell_wide scene__btn-cell">
                     курица
-                    <input type="checkbox" class="input-hidden" name="meat">
+                    <input type="checkbox" class="input-hidden js-protein" value = "1" name="meat">
                   </label>
                   <label class="btn-cell btn-cell_wide scene__btn-cell">
                     свинина
-                    <input type="checkbox" class="input-hidden" name="meat">
+                    <input type="checkbox" class="input-hidden js-protein" value = "1" name="meat">
                   </label>
                   <label class="btn-cell btn-cell_wide scene__btn-cell">
                     говядина
-                    <input type="checkbox" class="input-hidden" name="meat">
+                    <input type="checkbox" class="input-hidden js-protein" value = "1" name="meat">
                   </label>
                   <label class="btn-cell btn-cell_wide scene__btn-cell">
                     бекон
-                    <input type="checkbox" class="input-hidden" name="meat">
+                    <input type="checkbox" class="input-hidden js-protein" value = "1" name="meat">
                   </label>
                   <label class="btn-cell btn-cell_wide scene__btn-cell">
                     индейка
-                    <input type="checkbox" class="input-hidden" name="meat">
+                    <input type="checkbox" class="input-hidden js-protein" value = "1" name="meat">
                   </label>
                   <label class="btn-cell btn-cell_wide btn-cell_green scene__btn-cell scene__btn-cell_order-1">
                     без мяса
-                    <input type="checkbox" class="input-hidden" name="meat" data-restrict="meat">
+                    <input type="checkbox" class="input-hidden js-protein" value = "1" name="meat" data-restrict="meat">
                   </label>
                   <label class="btn-cell btn-cell_wide scene__btn-cell">
                     рыба
-                    <input type="checkbox" class="input-hidden" name="seafood">
+                    <input type="checkbox" class="input-hidden js-protein" value = "1" name="seafood">
                   </label>
                   <label class="btn-cell btn-cell_wide scene__btn-cell">
                     морепродукты
-                    <input type="checkbox" class="input-hidden" name="seafood">
+                    <input type="checkbox" class="input-hidden js-protein" value = "1" name="seafood">
                   </label>
                   <label class="btn-cell btn-cell_wide btn-cell_green scene__btn-cell scene__btn-cell_order-2">
                     без рыбы
-                    <input type="checkbox" class="input-hidden" name="seafood" data-restrict="seafood">
+                    <input type="checkbox" class="input-hidden js-protein" value = "1" name="seafood" data-restrict="seafood">
                   </label>
                 </div>
                 <div class="scene__buttons-holder scene__buttons-holder_center">
@@ -243,7 +247,7 @@
                   <div class="progress-percent">
                     24 %
                   </div>
-                  <button class="button button_control js-next-stage">
+                  <button class="button button_control js-next-stage" data-check="protein">
                     Продолжить
                   </button>
                 </div>
@@ -272,39 +276,39 @@
                 <div class="scene__pick scene__pick_grid scene__pick_indent_a">
                   <label class="btn-cell btn-cell_green btn-cell_wide scene__btn-cell">
                     брокколи
-                    <input type="checkbox" class="input-hidden" name="vegetables">
+                    <input type="checkbox" class="input-hidden" value = "1" name="vegetables">
                   </label>
                   <label class="btn-cell btn-cell_green btn-cell_wide scene__btn-cell">
                     грибы
-                    <input type="checkbox" class="input-hidden" name="vegetables">
+                    <input type="checkbox" class="input-hidden" value = "1" name="vegetables">
                   </label>
                   <label class="btn-cell btn-cell_green btn-cell_wide scene__btn-cell">
                     цуккини
-                    <input type="checkbox" class="input-hidden" name="vegetables">
+                    <input type="checkbox" class="input-hidden" value = "1" name="vegetables">
                   </label>
                   <label class="btn-cell btn-cell_green btn-cell_wide scene__btn-cell">
                     цв. капуста
-                    <input type="checkbox" class="input-hidden" name="vegetables">
+                    <input type="checkbox" class="input-hidden" value = "1" name="vegetables">
                   </label>
                   <label class="btn-cell btn-cell_green btn-cell_wide scene__btn-cell">
                     спаржа
-                    <input type="checkbox" class="input-hidden" name="vegetables">
+                    <input type="checkbox" class="input-hidden" value = "1" name="vegetables">
                   </label>
                   <label class="btn-cell btn-cell_green btn-cell_wide scene__btn-cell">
                     авокадо
-                    <input type="checkbox" class="input-hidden" name="vegetables">
+                    <input type="checkbox" class="input-hidden" value = "1" name="vegetables">
                   </label>
                   <label class="btn-cell btn-cell_green btn-cell_wide scene__btn-cell">
                     болг. перец
-                    <input type="checkbox" class="input-hidden" name="vegetables">
+                    <input type="checkbox" class="input-hidden" value = "1" name="vegetables">
                   </label>
                   <label class="btn-cell btn-cell_green btn-cell_wide scene__btn-cell">
                     баклажан
-                    <input type="checkbox" class="input-hidden" name="vegetables">
+                    <input type="checkbox" class="input-hidden" value = "1" name="vegetables">
                   </label>
                   <label class="btn-cell btn-cell_green btn-cell_wide scene__btn-cell">
                     огурцы
-                    <input type="checkbox" class="input-hidden" name="vegetables">
+                    <input type="checkbox" class="input-hidden" value = "1" name="vegetables">
                   </label>
                 </div>
                 <div class="scene__buttons-holder scene__buttons-holder_center">
@@ -314,7 +318,7 @@
                   <div class="progress-percent">
                     37 %
                   </div>
-                  <button class="button button_control js-next-stage">
+                  <button class="button button_control js-next-stage" data-check="vegetables">
                     Продолжить
                   </button>
                 </div>
@@ -341,27 +345,27 @@
                 <div class="scene__pick scene__pick_grid scene__pick_indent_b">
                   <label class="btn-cell btn-cell_green scene__btn-cell">
                     яйца
-                    <input type="checkbox" class="input-hidden" name="food">
+                    <input type="checkbox" class="input-hidden" value = "1" name="food">
                   </label>
                   <label class="btn-cell btn-cell_green scene__btn-cell">
                     орехи
-                    <input type="checkbox" class="input-hidden" name="food">
+                    <input type="checkbox" class="input-hidden" value = "1" name="food">
                   </label>
                   <label class="btn-cell btn-cell_green scene__btn-cell">
                     сыр
-                    <input type="checkbox" class="input-hidden" name="food">
+                    <input type="checkbox" class="input-hidden" value = "1" name="food">
                   </label>
                   <label class="btn-cell btn-cell_green scene__btn-cell">
                     творог
-                    <input type="checkbox" class="input-hidden" name="food">
+                    <input type="checkbox" class="input-hidden" value = "1" name="food">
                   </label>
                   <label class="btn-cell btn-cell_green scene__btn-cell">
                     масло
-                    <input type="checkbox" class="input-hidden" name="food">
+                    <input type="checkbox" class="input-hidden" value = "1" name="food">
                   </label>
                   <label class="btn-cell btn-cell_green scene__btn-cell">
                     кокос
-                    <input type="checkbox" class="input-hidden" name="food">
+                    <input type="checkbox" class="input-hidden" value = "1" name="food">
                   </label>
                 </div>
                 <div class="scene__buttons-holder scene__buttons-holder_center">
@@ -371,7 +375,7 @@
                   <div class="progress-percent">
                     50 %
                   </div>
-                  <button class="button button_control js-next-stage">
+                  <button class="button button_control js-next-stage" data-check="food">
                     Продолжить
                   </button>
                 </div>
@@ -394,23 +398,23 @@
                   </h2>
                   <label class="btn-row scene__btn-row">
                     В офиcе
-                    <input type="radio" class="input-hidden" name="day">
+                    <input type="radio" class="input-hidden" value="1" name="labor">
                   </label>
                   <label class="btn-row scene__btn-row">
                     В офисе, но регулярно выхожу
-                    <input type="radio" class="input-hidden" name="day">
+                    <input type="radio" class="input-hidden" value="1" name="labor">
                   </label>
                   <label class="btn-row scene__btn-row">
                     Большую часть я провожу на ногах
-                    <input type="radio" class="input-hidden" name="day">
+                    <input type="radio" class="input-hidden" value="1" name="labor">
                   </label>
                   <label class="btn-row scene__btn-row">
                     Ручной труд
-                    <input type="radio" class="input-hidden" name="day">
+                    <input type="radio" class="input-hidden" value="1" name="labor">
                   </label>
                   <label class="btn-row scene__btn-row">
                     Большую часть дня я провожу дома
-                    <input type="radio" class="input-hidden" name="day">
+                    <input type="radio" class="input-hidden" value="1" name="labor">
                   </label>
                 </div>
                 <div class="scene__buttons-holder">
@@ -420,7 +424,7 @@
                   <div class="progress-percent">
                     62 %
                   </div>
-                  <button class="button button_control js-next-stage">
+                  <button class="button button_control js-next-stage" data-check="labor">
                     Продолжить
                   </button>
                 </div>
@@ -444,27 +448,27 @@
                 <div class="scene__pick">
                   <label class="btn-row scene__btn-row">
                     Я часто не высыпаюсь
-                    <input type="radio"  class="input-hidden" name="habbits">
+                    <input type="radio"  class="input-hidden" value="1" name="habbits">
                   </label>
                   <label class="btn-row scene__btn-row">
                     Я ем поздно ночью
-                    <input type="radio"  class="input-hidden" name="habbits">
+                    <input type="radio"  class="input-hidden" value="1" name="habbits">
                   </label>
                   <label class="btn-row scene__btn-row">
                     Я употребляю много соли
-                    <input type="radio"  class="input-hidden" name="habbits">
+                    <input type="radio"  class="input-hidden" value="1" name="habbits">
                   </label>
                   <label class="btn-row scene__btn-row">
                     Я не могу не есть сладкое
-                    <input type="radio"  class="input-hidden" name="habbits">
+                    <input type="radio"  class="input-hidden" value="1" name="habbits">
                   </label>
                   <label class="btn-row scene__btn-row">
                     Я люблю газировку
-                    <input type="radio"  class="input-hidden" name="habbits">
+                    <input type="radio"  class="input-hidden" value="1" name="habbits">
                   </label>
                   <label class="btn-row scene__btn-row">
                     Ничего из перечисленного
-                    <input type="radio"  class="input-hidden" name="habbits">
+                    <input type="radio"  class="input-hidden" value="1" name="habbits">
                   </label>
                 </div>
                 <div class="scene__buttons-holder">
@@ -474,7 +478,7 @@
                   <div class="progress-percent">
                     75 %
                   </div>
-                  <button class="button button_control js-next-stage">
+                  <button class="button button_control js-next-stage" data-check="habbits">
                     Продолжить
                   </button>
                 </div>
@@ -527,7 +531,7 @@
                   <div class="progress-percent">
                     87 %
                   </div>
-                  <button class="button button_control js-next-section js-count-start">
+                  <button class="button button_control js-count-start">
                     Продолжить
                   </button>
                 </div>
@@ -579,28 +583,30 @@
               <div class="fill-box__progress">15%</div>
               <div class="fill-box__loader"></div>
             </div>
-            <div class="creation__text-holder">
-              <p class="creation__text fade-animation">
-                Обрабатываем введенные данные...
-              </p>
-              <p class="creation__text fade-animation">
-                Подсчитываем профиль питания...
-              </p>
-              <p class="creation__text fade-animation">
-                Рассчитываем количество еды...
-              </p>
-              <p class="creation__text fade-animation">
-                Выбираем подходящие рецепты...
-              </p>
-            </div>
-            <div class="creation__success">
-              <div class="creation__subject">
-                Ваш план питания готов!
+            <div class="creation__rotate-container">
+              <div class="creation__text-holder">
+                <p class="creation__text fade-animation">
+                  Обрабатываем введенные данные...
+                </p>
+                <p class="creation__text fade-animation">
+                  Подсчитываем профиль питания...
+                </p>
+                <p class="creation__text fade-animation">
+                  Рассчитываем количество еды...
+                </p>
+                <p class="creation__text fade-animation">
+                  Выбираем подходящие рецепты...
+                </p>
               </div>
-              <div class="creation__button-holder">
-                <button class="button button_elipse button_lightweight button_semi-wide js-next-section">
-                  Продолжить
-                </button>
+              <div class="creation__success">
+                <div class="creation__subject">
+                  Ваш план питания готов!
+                </div>
+                <div class="creation__button-holder">
+                  <button class="button button_elipse button_lightweight button_semi-wide js-next-section">
+                    Продолжить
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -1090,7 +1096,7 @@
                       Пожизненный доступ к плану питания
                     </li>
                     <li class="achievments__item">
-                      Будете Недовольны - Вернем Деньги!
+                      Будете недовольны - вернем деньги!
                     </li>
                   </ul>
                   <div class="secure">
@@ -1118,7 +1124,7 @@
             <p class="fail__text">
               Проверьте платежные данные и повторите попытку
             </p>
-            <button class="button fail__button js-prev-section">
+            <button class="button button_acept fail__button js-prev-section">
               Оплатить картой
             </button>
             <div class="fail__figure fail__figure_1"></div>
@@ -1133,34 +1139,63 @@
       <div class="footer__inner">
         <div class="footer__left">
           <div class="footer__logo">
-            План кето диеты
+            <a href="">
+              План кето диеты
+            </a>
           </div>
           <ul class="footer__data-list">
-            <li class="footer__data-item">Юридические данные:</li>
-            <li class="footer__data-item">ООО "Линкемед"</li>
-            <li class="footer__data-item">ИНН 7703471895/ОГРН 1197746135168</li>
-            <li class="footer__data-item">г.Москва,ул.Красина,д.27</li>
-            <li class="footer__data-item">Почта: info@instasale.store</li>
-            <li class="footer__data-item">© 2020 Instasale.store</li>
+            <li class="footer__data-item">
+                Юридические данные:
+            </li>
+            <li class="footer__data-item">
+                ООО "Линкемед"
+            </li>
+            <li class="footer__data-item">
+                ИНН 7703471895/ОГРН 1197746135168
+            </li>
+            <li class="footer__data-item">
+                г.Москва,ул.Красина,д.27
+            </li>
+            <li class="footer__data-item">
+                Почта: info@instasale.store
+            </li>
+            <li class="footer__data-item">
+                © 2020 Instasale.store
+            </li>
+            <li class="footer__data-item cancel-service">
+              <a href="">
+                Отписаться от услуг
+              </a>
+            </li>
           </ul>
         </div>
         <div class="footer__center">
           <div class="footer__logo footer__logo_mobile">
-            План кето диеты
+            <a href="">
+              План кето диеты
+            </a>
           </div>
           <span class="footer__headline footer__headline_bold">
-            Узнайте больше о&nbspкето&nbspдиете
+            <a href="">
+              Узнайте больше о&nbspкето&nbspдиете
+            </a>
           </span>
           <span class="footer__headline footer__headline_bold">
-            Часто задаваемые вопросы
+            <a href="">
+              Часто задаваемые вопросы
+            </a>
           </span>
           <span class="footer__headline footer__headline_bold">
-            Общие условия
+            <a href="">
+              Общие условия
+            </a>
           </span>
         </div>
         <div class="footer__right">
-          <span class="footer__headline">
-            Контакты
+          <span class="footer__headline" id="contacts">
+            <a href="" >
+              Контакты
+            </a>
           </span>
         </div>
       </div>

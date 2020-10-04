@@ -68,6 +68,13 @@ $(document).ready(function(){
 	});
 	
 
+	// =========================================== scrollTo
+
+  $("a.scrollTo").click(function(event){
+    event.preventDefault();
+    $("html, body").animate({scrollTop: $($(this).attr("href")).offset().top},500);
+  });
+
 	// =========================================== show stage info
 
   let infoBtns = document.querySelectorAll('.info-btn'); 
@@ -85,13 +92,13 @@ $(document).ready(function(){
 	
   // =========================================== buttons active style
 
-  let btnAcept = document.querySelectorAll('.button_acept');
+  // let btnAcept = document.querySelectorAll('.button_acept');
 
-  btnAcept.forEach(function(item){        
-    item.addEventListener('click', function(){
-      this.classList.add('active');
-    })
-	});
+  // btnAcept.forEach(function(item){        
+  //   item.addEventListener('click', function(){
+  //     this.classList.add('active');
+  //   })
+	// });
 	
 	// =========================================== change hover effect on desctop to mobile click
 
@@ -111,18 +118,24 @@ $(document).ready(function(){
 	// =========================================== Data collection
 	
 	let resumeCards = document.querySelectorAll('.resume-card');
+	
+	let dataComplete = false;
 
 	const UserData = function () {
 
 		this.data = {
-			userName: '',
+			userName: 'Посетитель',
 			gender: null,
-			active: 1,
+			activity: null,
+			protein: null,
+			vegetables: null,
+			food: null,
+			labor: null,
+			habbits: null,
 			age: null,
 			weight: null,
 			height: null,
 			new_weight: null,
-			forward: false,
 		};
 
 		this.handleChange = function (name, value) {
@@ -132,7 +145,16 @@ $(document).ready(function(){
 				for(let i = 0; i < resumeCards.length; i++) {
 					calc(i, this.data);
 				}
+
+				dataComplete = Object.keys(this.data).every(key => !!this.data[key])
 			}
+		}
+
+		this.checkKey = function (name) {
+			if(this.data[name]) {
+				return true;
+			}
+			return false;
 		}
 	};
 
@@ -142,16 +164,16 @@ $(document).ready(function(){
   let activityArr = document.getElementsByName('activity');
   let meatArr = document.getElementsByName('meat');
   let seafoodArr = document.getElementsByName('seafood');
+  let proteinArr = document.querySelectorAll('.js-protein');
   let vegetablesArr = document.getElementsByName('vegetables');
   let foodArr = document.getElementsByName('food');
-  let dayArr = document.getElementsByName('day');
+  let laborArr = document.getElementsByName('labor');
 	let habbitsArr = document.getElementsByName('habbits');
 	let limit2 = document.querySelectorAll('.js-limit-2');
 	let limit3 = document.querySelectorAll('.js-limit-3');
 	let userNameInput = document.getElementById('user-name-input');
 	let userName = document.querySelectorAll('.userName');
 	let busy = false;
-	let forward = false;
 
 	gendorButtons.forEach(function(item){
 		item.addEventListener('click', function() {
@@ -164,7 +186,7 @@ $(document).ready(function(){
   activityArr.forEach(function(item){
     item.addEventListener('change', function(){
 			changeRadio(activityArr, item);
-			data.handleChange('active', this.value);
+			data.handleChange('activity', this.value);
     })
 	});
 
@@ -173,7 +195,7 @@ $(document).ready(function(){
 			let label = item.closest('label');
 			let labelActive = label.classList.contains('active')
 			let restrict = item.dataset.restrict === "meat";
-
+						
 			if(restrict) {
 					for(let i = 0; i < meatArr.length; i++) {
 						meatArr[i].closest('label').classList.remove('active')
@@ -225,28 +247,52 @@ $(document).ready(function(){
 			}
     })
 	});
+
+	proteinArr.forEach(function(item) {
+		item.addEventListener('change', function() {
+			if(verifyCheckboxChecked(proteinArr)) {
+				data.handleChange('protein', this.value);
+			} else {
+				data.handleChange('protein', null);
+			}
+		})
+	});
 	
 	vegetablesArr.forEach(function(item){
     item.addEventListener('change', function(){
 			changeCheckbox(item);
+
+			if(verifyCheckboxChecked(vegetablesArr)) {
+				data.handleChange('vegetables', this.value);
+			} else {
+				data.handleChange('vegetables', null);
+			}
     })
 	});
 
 	foodArr.forEach(function(item){
     item.addEventListener('change', function(){
 			changeCheckbox(item);
+
+			if(verifyCheckboxChecked(foodArr)) {
+				data.handleChange('food', this.value);
+			} else {
+				data.handleChange('food', null);
+			}
     })
 	});
 
-	dayArr.forEach(function(item){
+	laborArr.forEach(function(item){
     item.addEventListener('change', function(){
-			changeRadio(dayArr,item);
+			changeRadio(laborArr,item);
+			data.handleChange('labor', this.value);
     })
 	});
 
 	habbitsArr.forEach(function(item){
     item.addEventListener('change', function(){
 			changeRadio(habbitsArr,item);
+			data.handleChange('habbits', this.value);
     })
 	});
 
@@ -287,14 +333,23 @@ $(document).ready(function(){
 
 	// =========================================== get UserName and set to html
 
-	userNameInput.addEventListener('change', function(){
-		data.handleChange('userName', this.value);
-
-		userName.forEach(function(item){
-			item.textContent = ` ${data.data.userName}, `;
-		});
+	userName.forEach(function(item){
+		item.textContent = ` ${data.data.userName}, `;
 	});
+
+	userNameInput.addEventListener('change', function(){
+		if(this.value === '' || this.value === null || this.value === undefined || this.value === " ") {
+		} else {
+			data.handleChange('userName', this.value);
 	
+			userName.forEach(function(item){
+				item.textContent = ` ${data.data.userName}, `;
+			});
+		}
+	});
+
+	// =========================================== supporting functions
+
 	function limitInputCharacters(limitNumber, item) {
 		let characters = item.value.split('');
 		if(characters.length > limitNumber) {
@@ -320,11 +375,12 @@ $(document).ready(function(){
 		item.closest('label').classList.add('active');
 	}
 
-	function allowMoove() {
-		if(data.data.forward) {
-			return true;
+	function verifyCheckboxChecked(arr) {
+		for(let i =0; i < arr.length; i++) {
+			if(arr[i].checked) {
+				return true;
+			}
 		}
-		return false;
 	}
 
 	// =========================================== Data calculation function
@@ -334,7 +390,7 @@ $(document).ready(function(){
 		let age = data.age;
 		let height = data.height;
 		let weight = data.weight;
-		let active = data.active;
+		let active = data.activity;
 		let new_weight = data.new_weight;
     let text_value = $(`.resume-card_${item} .resume-card__value`);
 		let card = $(`.resume-card_${item}`);
@@ -664,7 +720,9 @@ $(document).ready(function(){
 	stageNextButtons.forEach(function(item) {
 		item.addEventListener('click', function(){
 			$("html, body").stop().animate({scrollTop:0}, 500);
-			nextBlock();
+				if(data.checkKey(item.dataset.check)) {
+					nextBlock();
+				}
 		});
 	});
 
@@ -678,7 +736,7 @@ $(document).ready(function(){
 	sectionNextButtons.forEach(function(item) {
 		item.addEventListener('click', function(){
 			$("html, body").stop().animate({scrollTop:0}, 500);
-			nextSection();
+				nextSection();
 		});
 	});
 
@@ -695,12 +753,16 @@ $(document).ready(function(){
 		});
 	});
 
-	// =========================================== Animation start trigger
+	// =========================================== Calc Data & Animation start trigger
 
   document.querySelector('.js-count-start').addEventListener('click', function (){
-		if(!busy) {
-			clearAnimationFootprint();
-			setTimeout(animateCreation, 200);
+		if(dataComplete) {
+			nextSection();
+
+			if(!busy) {
+				clearAnimationFootprint();
+				setTimeout(animateCreation, 200);
+			}
 		}
 	});
 
@@ -745,7 +807,9 @@ $(document).ready(function(){
 			
 			if(index >= textArr.length) {
 				clearTimeout(textTimeout);
-				creationSuccess.classList.add('active');
+				setTimeout(function(){
+					creationSuccess.classList.add('active');
+				}, 300);
 				busy = false;
 				loader.style.height = '100%';
 				loader.classList.remove('load-animation');
