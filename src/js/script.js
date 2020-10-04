@@ -75,6 +75,24 @@ $(document).ready(function(){
     $("html, body").animate({scrollTop: $($(this).attr("href")).offset().top},500);
   });
 
+	// =========================================== Sound toggler
+
+	let audio = document.querySelector('#audio');
+	let soundBtn =  document.querySelector('.js-sound-toggler');
+	let soundTitle = document.querySelector('.js-sound-title');
+	let evenOdd = 0;
+
+	soundBtn.addEventListener('click', function(){
+		evenOdd++;
+		if(evenOdd % 2 !== 0) {
+			audio.play();
+			soundTitle.textContent = "Нажмите здесь, чтобы выключить звук";
+		} else {
+			audio.pause();
+			soundTitle.textContent = "Нажмите здесь, чтобы включить звук";
+		}
+	});
+
 	// =========================================== show stage info
 
   let infoBtns = document.querySelectorAll('.info-btn'); 

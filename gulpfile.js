@@ -18,7 +18,8 @@ const path = {
         style  : "dist/style/",
         img    : "dist/img/",
         svg    : "dist/img/svg/",
-        fonts  : "dist/fonts/"
+        fonts  : "dist/fonts/",
+        audio  : "dist/audio/"
     },
 
     src: {
@@ -27,7 +28,8 @@ const path = {
         style : "src/style/*.scss",
         img   : "src/img/**/*.{jpg,png,gif,ico}",
         svg   : "src/img/svg/*.svg",
-        fonts : "src/fonts/**/*"
+        fonts : "src/fonts/**/*",
+        audio : "src/audio/**/*"
     },
 
     watch: {
@@ -136,6 +138,11 @@ function fonts() {
     .pipe(gulp.dest(path.build.fonts));
 }
 
+function audio() {
+    return gulp.src(path.src.audio)
+    .pipe(gulp.dest(path.build.audio));
+}
+
 function watchFiles() {
     gulp.watch(path.watch.html, html);
     gulp.watch(path.watch.style, style);
@@ -150,7 +157,7 @@ function clean() {
     return del(path.clean);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, style, script, img, svg, svgOrigin, fonts));
+const build = gulp.series(clean, gulp.parallel(html, style, script, img, svg, svgOrigin, fonts, audio));
 const watch = gulp.parallel(build, watchFiles, browserSync);
 
 exports.html        = html;
@@ -160,6 +167,7 @@ exports.img         = img;
 exports.svg         = svg;
 exports.svgOrigin   = svgOrigin;
 exports.fonts       = fonts;
+exports.audio       = audio;
 exports.watchFiles  = watchFiles;
 exports.clean       = clean;
 exports.build       = build;

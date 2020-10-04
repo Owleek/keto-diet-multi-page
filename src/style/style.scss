@@ -2376,18 +2376,20 @@
   }
 
   &__sound-toggler {
+    padding: 0px 46px;
     font-weight: 500;
     font-size: 14px;
     text-align: center;
     width: 255px;
     height: 30px;
     position: absolute;
-    z-index: 50;
+    z-index: 101;
     left: 0; top: 36px;
     user-select: none;
     cursor: pointer;
 
     @include respond(md) {
+      padding: 0px 20px;
       top: -5px;
       left: 50%;
       width: 178px;
@@ -2463,6 +2465,11 @@
       background-position: 0% 50%;
     }
   }
+}
+
+.audio {
+  position: absolute;
+  opacity: 0;
 }
 
 .userName {
