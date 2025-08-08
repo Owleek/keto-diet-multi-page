@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "gulp",
+    "dev": "gulp",
+    "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -25,9 +28,10 @@
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
     "gulp-rigger": "^0.5.8",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^5.1.0",
     "gulp-svg-sprite": "^1.5.0",
     "gulp-svgmin": "^2.2.0",
-    "gulp-uglify": "^3.0.2"
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.77.0"
   }
 }
